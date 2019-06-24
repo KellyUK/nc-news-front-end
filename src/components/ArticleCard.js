@@ -9,16 +9,16 @@ export const ArticleCard = ({ article_id, article }) => {
 
   return (
     <div className={styles.articleCard}>
-      {/* <Link to={article_id}> */}
-      <h2 className={styles.articleTitle}>{article.title}</h2>
-      <h3>Topic: {article.topic}</h3>
-      <h3>Article by: {article.author}</h3>
-      <section className={styles.additional}>
-        <p>Votes: {article.votes}</p>
-        <p>Comments: {article.comments}</p>
-        <p>Date: {formattedDate}</p>
-      </section>
-      {/* </Link> */}
+      <Link to={`articles/${article.article_id}`}>
+        <h2 className={styles.articleTitle}>{article.title}</h2>
+        <h3>Topic: {article.topic}</h3>
+        <h3>Article by: {article.author}</h3>
+        <section className={styles.additional}>
+          <p>Votes: {article.votes}</p>
+          <p>Comments: {article.comments}</p>
+          <p>Date: {formattedDate}</p>
+        </section>
+      </Link>
     </div>
   );
 };

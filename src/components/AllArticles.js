@@ -6,7 +6,8 @@ import Loading from "./Loading";
 class AllArticles extends Component {
   state = {
     isLoading: true,
-    allArticles: []
+    allArticles: [],
+    article_id: null
   };
 
   componentDidMount() {
@@ -21,7 +22,11 @@ class AllArticles extends Component {
     ) : (
       <section>
         {this.state.allArticles.map(article => (
-          <ArticleCard key={article._id} article={article} />
+          <ArticleCard
+            key={article.article_id}
+            article={article}
+            article_id={article.article_id}
+          />
         ))}
       </section>
     );
