@@ -10,11 +10,15 @@ import Article from "./components/Article";
 class App extends Component {
   state = { loggedIn: false, topic: "" };
 
+  updateTopic = event => {
+    const { value } = event.target;
+    this.setState({ topic: value });
+  };
+
   render() {
-    console.log("topic", this.topic);
     return (
       <div className="App">
-        <Header topic={this.topic} updateTopic={this.topic} />
+        <Header topic={this.updateTopic} />
         <Router>
           <Home path="/" />
           <AllArticles path="/articles/*" />

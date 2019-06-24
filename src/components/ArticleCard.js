@@ -1,7 +1,6 @@
 import * as React from "react";
 
 export const ArticleCard = ({ article_id, article }) => {
-  console.log(article);
   return (
     <div>
       <h2 className="articleTitle">{article.title}</h2>
