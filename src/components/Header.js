@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link } from "@reach/router";
 import styles from "../style/Header.module.css";
+import LoginForm from "./LoginForm";
 
 export const Header = () => {
   return (
@@ -25,6 +26,7 @@ export const Header = () => {
           <button className={styles.navButton}>Cooking</button>
         </Link>
       </nav>
+      <LoginForm />
     </div>
   );
 };
