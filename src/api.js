@@ -1,9 +1,11 @@
 import axios from "axios";
 
-const baseURL = "https://kelly-davidson-nc-news.herokuapp.com/api/";
+const request = axios.create({
+  baseURL: "https://kelly-davidson-nc-news.herokuapp.com/api/"
+});
 
 export const getAllArticles = () => {
-  return axios.get(`${baseURL}articles`).then(({ data }) => {
+  return request.get(`articles`).then(({ data }) => {
     return data.articles;
   });
 };
