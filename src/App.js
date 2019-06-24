@@ -8,12 +8,13 @@ import ArticlesByTopic from "./components/ArticlesByTopic";
 import Article from "./components/Article";
 
 class App extends Component {
-  state = { loggedIn: false };
+  state = { loggedIn: false, topic: "" };
 
   render() {
+    console.log("topic", this.topic);
     return (
       <div className="App">
-        <Header />
+        <Header topic={this.topic} updateTopic={this.topic} />
         <Router>
           <Home path="/" />
           <AllArticles path="/articles/*" />

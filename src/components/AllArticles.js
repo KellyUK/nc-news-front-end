@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ArticleCard from "./ArticleCard";
 
 class AllArticles extends Component {
   state = {
@@ -33,6 +34,9 @@ class AllArticles extends Component {
     return (
       <div>
         <p>all articles</p>
+        {this.state.allArticles.map(article => (
+          <ArticleCard key={article._id} article={article} />
+        ))}
       </div>
     );
   }

@@ -4,7 +4,7 @@ import styles from "../style/Header.module.css";
 import LoginBar from "./LoginBar";
 import FilterArticlesDropdown from "./FilterArticlesDropdown";
 
-export const Header = () => {
+export const Header = ({ updateTopic }) => {
   return (
     <div>
       <div className={styles.logo}>
