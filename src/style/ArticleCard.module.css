@@ -1,0 +1,22 @@
+.articleCard {
+  border: solid;
+  margin: 1em auto;
+  padding: 1em;
+  border-color: darkgrey;
+  border-style: double;
+  background-color: aliceblue;
+  max-width: 600px;
+}
+
+.articleTitle,
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.articleCard:hover {
+  background-color: white;
+
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.4),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}

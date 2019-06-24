@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import ArticleCard from "./ArticleCard";
 import { getAllArticles } from "../api";
+import Loading from "./Loading";
 
 class AllArticles extends Component {
   state = {
-    loaded: false,
+    isLoading: true,
     allArticles: []
   };
 
@@ -15,13 +16,14 @@ class AllArticles extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <p>all articles</p>
+    return this.state.isloading ? (
+      <Loading isLoading={this.isLoading} />
+    ) : (
+      <section>
         {this.state.allArticles.map(article => (
           <ArticleCard key={article._id} article={article} />
         ))}
-      </div>
+      </section>
     );
   }
 }

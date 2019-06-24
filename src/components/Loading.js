@@ -1,8 +1,8 @@
 import React from "react";
 import Spinner from "react-spinner-material";
-import styles from "../style/Loader.module.css";
+import styles from "../style/Loading.module.css";
 
-const Loader = () => {
+const Loading = () => {
   return (
     <div className={styles.div}>
       <div className={styles.container}>
@@ -19,4 +19,4 @@ const Loader = () => {
   );
 };
 
-export default Loader;
+export default Loading;

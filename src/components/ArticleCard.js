@@ -1,14 +1,24 @@
 import * as React from "react";
+import moment from "moment";
+import styles from "../style/ArticleCard.module.css";
+import { Link } from "@reach/router";
 
 export const ArticleCard = ({ article_id, article }) => {
+  const rawDate = article.created_at;
+  const formattedDate = moment(rawDate).format("YYYY MM DD");
+
   return (
-    <div>
-      <h2 className="articleTitle">{article.title}</h2>
-      <h3>Written by: {article.author}</h3>
+    <div className={styles.articleCard}>
+      {/* <Link to={article_id}> */}
+      <h2 className={styles.articleTitle}>{article.title}</h2>
       <h3>Topic: {article.topic}</h3>
-      <p>Votes: {article.votes}</p>
-      <p>Comments: {article.comments}</p>
-      <p>Date: {article.created_at}</p>
+      <h3>Article by: {article.author}</h3>
+      <section className={styles.additional}>
+        <p>Votes: {article.votes}</p>
+        <p>Comments: {article.comments}</p>
+        <p>Date: {formattedDate}</p>
+      </section>
+      {/* </Link> */}
     </div>
   );
 };
