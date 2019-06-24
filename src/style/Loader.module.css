@@ -1,0 +1,16 @@
+.div {
+  border: solid;
+  height: 960px;
+  z-index: 30001;
+  opacity: 0.3;
+}
+
+.container {
+  background-color: #eee;
+  margin-left: 43vw;
+  margin-top: 5vh;
+}
+
+.container .spinner {
+  margin-left: 60vw;
+}

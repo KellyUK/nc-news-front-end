@@ -1,0 +1,46 @@
+.logo {
+  border: solid;
+  border-color: rgb(141, 18, 18);
+}
+
+.header {
+  padding: 0.5em;
+  display: block;
+  background-color: #15154e;
+  margin: 0px;
+  color: white;
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 2em;
+}
+
+.navbar {
+  max-width: 1290px;
+  margin: auto;
+}
+.navButton {
+  padding: 0.5em;
+  font-size: 1em;
+  font-weight: bold;
+  width: 20%;
+  background-color: white;
+  color: #15154e;
+  border-bottom: solid;
+  border-bottom-color: grey;
+}
+
+.navButton:hover {
+  background-color: lightgrey;
+  font-weight: bolder;
+  border-bottom: #15154e;
+  border-bottom: solid;
+}
+
+.navButton:active {
+  border: solid;
+  border-color: gray;
+}
+
+.img {
+  width: 100%;
+  height: 10em;
+}
