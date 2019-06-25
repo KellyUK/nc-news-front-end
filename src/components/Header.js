@@ -4,7 +4,7 @@ import styles from "../style/Header.module.css";
 import LoginBar from "./LoginBar";
 import FilterArticlesDropdown from "./FilterArticlesDropdown";
 
-export const Header = ({ updateTopic }) => {
+export const Header = () => {
   return (
     <div>
       <div className={styles.logo}>
@@ -17,13 +17,20 @@ export const Header = ({ updateTopic }) => {
         <Link to="/articles">
           <button className={styles.navButton}>Articles</button>
         </Link>
-        <Link to="/articles/coding">
+        {/* {const topics = ["coding", "football", "cooking"]; topics.map(topic =>{
+        {
+          <Link to={`topics/${topic}`}>
+            <button className={styles.navButton}>{`${topic}`}</button>
+          </Link>
+        }
+        }; */}
+        <Link to="/topics/coding">
           <button className={styles.navButton}>Coding</button>
         </Link>
-        <Link to="/articles/football">
+        <Link to="/topics/football">
           <button className={styles.navButton}>Football</button>
         </Link>
-        <Link to="/articles/cooking">
+        <Link to="/topics/cooking">
           <button className={styles.navButton}>Cooking</button>
         </Link>
       </nav>
