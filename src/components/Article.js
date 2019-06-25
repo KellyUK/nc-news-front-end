@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { getArticleById } from "../api";
-import moment from "moment";
 import CommentBar from "./CommentBar";
 
 class Article extends Component {
@@ -13,8 +12,6 @@ class Article extends Component {
   }
   render() {
     const { article } = this.state;
-    // const rawDate = article.created_at;
-    // const formattedDate = moment(rawDate).format("YYYY MM DD");
     return (
       <div>
         <h2>{article.title}</h2>
