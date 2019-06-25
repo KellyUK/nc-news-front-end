@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { getCommentsByArticleId } from "../api";
 import Loading from "./Loading";
-import ArticleCard from "./ArticleCard";
+import CommentBody from "./CommentBody";
+import AddComment from "./AddComment";
 
 class CommentsList extends Component {
   state = { comments: [], isLoading: true };
@@ -19,18 +20,10 @@ class CommentsList extends Component {
       <Loading isLoading={this.isLoading} />
     ) : (
       <div>
-        {/* <ArticleCard /> */}
-        <form>
-          <input type="text" />
-          <button>Add New Comment</button>
-        </form>
+        <AddComment />
         {comments.map(comment => (
           <div>
-            <CommentBody />
-            <p>{comment.body}</p>
-            <p>Votes:{comment.votes}</p>
-            <p>Author:{comment.author}</p>
-            <p>{comment.created_at}</p>
+            <CommentBody comment={comment} key={comment.comment_id} />
           </div>
         ))}
       </div>

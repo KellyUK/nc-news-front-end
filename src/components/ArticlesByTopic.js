@@ -7,11 +7,12 @@ class ArticlesByTopic extends Component {
   state = {
     articles: [],
     topic: "",
-    article_id: null
+    article_id: null,
+    isLoading: true
   };
 
   componentDidMount() {
-    getAllArticles().then(articles =>
+    getAllArticles(this.props.topic).then(articles =>
       this.setState({
         articles: articles,
         isLoading: false,
@@ -25,8 +26,8 @@ class ArticlesByTopic extends Component {
       getAllArticles(this.props.topic).then(articles =>
         this.setState({
           articles: articles,
-          isLoading: false,
-          topic: this.props.topic
+          isLoading: false
+          // topic: this.props.topic
         })
       );
     }
