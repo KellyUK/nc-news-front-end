@@ -14,7 +14,7 @@ export const Header = () => {
         <Link to="/">
           <button className={styles.navButton}>Home</button>
         </Link>
-        <Link to="/articles">
+        <Link to="/articles/">
           <button className={styles.navButton}>Articles</button>
         </Link>
         <Link to="/topics/coding">

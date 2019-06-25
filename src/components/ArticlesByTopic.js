@@ -26,8 +26,8 @@ class ArticlesByTopic extends Component {
       getAllArticles(this.props.topic).then(articles =>
         this.setState({
           articles: articles,
-          isLoading: false
-          // topic: this.props.topic
+          isLoading: false,
+          topic: this.props.topic
         })
       );
     }
