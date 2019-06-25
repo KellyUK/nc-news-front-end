@@ -17,7 +17,7 @@ class AllArticles extends Component {
   }
 
   render() {
-    return this.state.isloading ? (
+    return this.state.isLoading ? (
       <Loading isLoading={this.isLoading} />
     ) : (
       <section>
