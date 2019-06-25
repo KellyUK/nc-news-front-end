@@ -3,7 +3,6 @@ import { Router } from "@reach/router";
 import "./App.css";
 import Header from "./components/Header";
 import Home from "./components/Home";
-import AllArticles from "./components/AllArticles";
 import ArticlesByTopic from "./components/ArticlesByTopic";
 import Article from "./components/Article";
 import CommentsList from "./components/CommentsList";
@@ -22,7 +21,6 @@ class App extends Component {
         <Header topic={this.updateTopic} />
         <Router>
           <Home path="/" />
-          {/* <AllArticles path="/articles" /> */}
           <ArticlesByTopic path="/articles/" />
           <ArticlesByTopic path="/topics/:topic" />
           <Article path="articles/:article_id" />

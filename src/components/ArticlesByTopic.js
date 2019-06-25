@@ -11,6 +11,16 @@ class ArticlesByTopic extends Component {
     isLoading: true
   };
 
+  fetchArticles = () => {
+    getAllArticles(this.props.topic).then(articles =>
+      this.setState({
+        articles: articles,
+        isLoading: false,
+        topic: this.props.topic
+      })
+    );
+  };
+
   componentDidMount() {
     getAllArticles(this.props.topic).then(articles =>
       this.setState({
