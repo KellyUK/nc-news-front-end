@@ -19,6 +19,18 @@ class ArticlesByTopic extends Component {
     );
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.topic !== this.props.topic) {
+      getAllArticles(this.props.topic).then(articles =>
+        this.setState({
+          articles: articles,
+          isLoading: false,
+          topic: this.props.topic
+        })
+      );
+    }
+  }
+
   render() {
     const { articles } = this.state;
     return (
