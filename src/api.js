@@ -18,9 +18,14 @@ export const getArticleById = article_id => {
   });
 };
 
+export const getCommentsByArticleId = article_id => {
+  return request.get(`articles/${article_id}/comments`).then(({ data }) => {
+    return data.comments;
+  });
+};
+
 export const getAllTopics = () => {
   return request.get("topics", { params: {} }).then(({ data }) => {
-    //console.log(data.topics);
     return data.topics;
   });
 };
