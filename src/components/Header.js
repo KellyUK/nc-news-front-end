@@ -17,13 +17,6 @@ export const Header = () => {
         <Link to="/articles">
           <button className={styles.navButton}>Articles</button>
         </Link>
-        {/* {const topics = ["coding", "football", "cooking"]; topics.map(topic =>{
-        {
-          <Link to={`topics/${topic}`}>
-            <button className={styles.navButton}>{`${topic}`}</button>
-          </Link>
-        }
-        }; */}
         <Link to="/topics/coding">
           <button className={styles.navButton}>Coding</button>
         </Link>

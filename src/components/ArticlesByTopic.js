@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getAllArticles } from "../api";
 import ArticleCard from "./ArticleCard";
+import Loading from "./Loading";
 
 class ArticlesByTopic extends Component {
   state = {
@@ -33,7 +34,9 @@ class ArticlesByTopic extends Component {
 
   render() {
     const { articles } = this.state;
-    return (
+    return this.state.isLoading ? (
+      <Loading isLoading={this.isLoading} />
+    ) : (
       <div>
         {articles.map(article => (
           <ArticleCard
