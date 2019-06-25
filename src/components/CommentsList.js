@@ -3,7 +3,7 @@ import { getCommentsByArticleId } from "../api";
 import Loading from "./Loading";
 import ArticleCard from "./ArticleCard";
 
-class Comments extends Component {
+class CommentsList extends Component {
   state = { comments: [], isLoading: true };
 
   componentDidMount() {
@@ -20,9 +20,13 @@ class Comments extends Component {
     ) : (
       <div>
         {/* <ArticleCard /> */}
-        <button>Add New Comment</button>
+        <form>
+          <input type="text" />
+          <button>Add New Comment</button>
+        </form>
         {comments.map(comment => (
           <div>
+            <CommentBody />
             <p>{comment.body}</p>
             <p>Votes:{comment.votes}</p>
             <p>Author:{comment.author}</p>
@@ -34,4 +38,4 @@ class Comments extends Component {
   }
 }
 
-export default Comments;
+export default CommentsList;
