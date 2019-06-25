@@ -21,8 +21,8 @@ class App extends Component {
         <Header topic={this.updateTopic} />
         <Router>
           <Home path="/" />
-          <AllArticles path="/articles/*" />
-          <ArticlesByTopic path="/articles/:topic" />
+          <AllArticles path="/articles" />
+          {/* <ArticlesByTopic path="/articles/:topic" /> */}
           <Article path="articles/:article_id" />
         </Router>
       </div>

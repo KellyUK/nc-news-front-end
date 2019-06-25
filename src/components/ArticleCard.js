@@ -9,7 +9,7 @@ export const ArticleCard = ({ article_id, article }) => {
 
   return (
     <div className={styles.articleCard}>
-      <Link to={`articles/${article.article_id}`}>
+      <Link to={`${article_id}`}>
         <h2 className={styles.articleTitle}>{article.title}</h2>
         <h3>Topic: {article.topic}</h3>
         <h3>Article by: {article.author}</h3>
