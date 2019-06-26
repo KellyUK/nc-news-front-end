@@ -3,6 +3,7 @@ import { getCommentsByArticleId } from "../api";
 import Loading from "./Loading";
 import CommentBody from "./CommentBody";
 import AddComment from "./AddComment";
+import postCommentOnArticle from "../api";
 
 class CommentsList extends Component {
   state = { comments: [], isLoading: true };
@@ -11,6 +12,12 @@ class CommentsList extends Component {
     getCommentsByArticleId(this.props.article_id).then(comments =>
       this.setState({ comments: comments, isLoading: false })
     );
+  }
+
+  componentDidUpdate() {
+    postCommentOnArticle(this.props.article_id).then(comments => {
+      this.setState({ comments: comments });
+    });
   }
 
   render() {
