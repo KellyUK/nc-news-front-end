@@ -29,3 +29,11 @@ export const getAllTopics = () => {
     return data.topics;
   });
 };
+
+export const getUserByUsername = username => {
+  return request
+    .get("users", { params: { username: username } })
+    .then(({ data }) => {
+      return data.user;
+    });
+};
