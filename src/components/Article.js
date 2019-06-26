@@ -9,7 +9,11 @@ class Article extends Component {
 
   componentDidMount() {
     getArticleById(this.props.article_id).then(article => {
-      this.setState({ article: article, loading: false });
+      this.setState({
+        article: article,
+        loading: false,
+        username: article.author
+      });
     });
   }
   render() {
