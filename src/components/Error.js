@@ -5,6 +5,13 @@ class Error extends Component {
     stuff: null,
     err: null
   };
+
+  componentDidMount = () => {
+    this.getContent();
+  };
+
+  getContent = () => {};
+
   render() {
     return <div />;
   }

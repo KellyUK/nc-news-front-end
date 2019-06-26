@@ -38,6 +38,10 @@ class ArticlesByTopic extends Component {
           articles: articles,
           isLoading: false,
           topic: this.props.topic
+        }).catch(err => {
+          this.setState({
+            err
+          });
         })
       );
     }

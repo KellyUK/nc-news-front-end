@@ -4,14 +4,14 @@ import LoginBar from "./LoginBar";
 import FilterArticlesDropdown from "./FilterArticlesDropdown";
 import NavBar from "./NavBar.js";
 
-export const Header = () => {
+export const Header = ({ handleLoginClick }) => {
   return (
     <div>
       <div className={styles.logo}>
         <h1 className={styles.header}>NC News</h1>
       </div>
       <NavBar />
-      <LoginBar />
+      <LoginBar handleLoginClick={handleLoginClick} />
       <FilterArticlesDropdown />
     </div>
   );

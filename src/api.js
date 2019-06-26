@@ -45,7 +45,8 @@ export const patchArticleVotes = (article_id, { inc_votes }) => {
 };
 
 export const postCommentOnArticle = (article_id, {}) => {
-  return request.post(`articles/${article_id}/comments`).then(({ data }) => {
-    return data.comments;
+  return request.post(`articles/${article_id}/comments`).then(({ body }) => {
+    console.log(body);
+    return body.comments;
   });
 };
