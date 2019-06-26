@@ -4,7 +4,7 @@ import LoginBar from "./LoginBar";
 import FilterArticlesDropdown from "./FilterArticlesDropdown";
 import NavBar from "./NavBar.js";
 
-export const Header = ({ handleLoginClick }) => {
+export const Header = ({ handleLoginClick, handleSortChange }) => {
   return (
     <div>
       <div className={styles.logo}>
@@ -12,7 +12,7 @@ export const Header = ({ handleLoginClick }) => {
       </div>
       <NavBar />
       <LoginBar handleLoginClick={handleLoginClick} />
-      <FilterArticlesDropdown />
+      <FilterArticlesDropdown handleSortChange={handleSortChange} />
     </div>
   );
 };

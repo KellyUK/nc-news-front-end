@@ -3,9 +3,17 @@ import React from "react";
 const FilterArticlesDropdown = () => {
   return (
     <div className="dropdown">
-      <button>Most Comments</button>
-      <button>Most Votes</button>
-      <button>Most Comments</button>
+      <select>
+        <option onClick={handleSortChange} value="created_at">
+          Newest
+        </option>
+        <option onChange={handleSortChange} value="votes">
+          Most Votes
+        </option>
+        <option onChange={handleSortChange} value="comment_count">
+          Most Comments
+        </option>
+      </select>
     </div>
   );
 };

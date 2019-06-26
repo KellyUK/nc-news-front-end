@@ -4,9 +4,11 @@ const request = axios.create({
   baseURL: "https://kelly-davidson-nc-news.herokuapp.com/api/"
 });
 
-export const getAllArticles = topic => {
+export const getAllArticles = (topic, comment_count) => {
   return request
-    .get("articles", { params: { topic: topic } })
+    .get("articles", {
+      params: { topic: topic, sort_by: comment_count }
+    })
     .then(({ data }) => {
       return data.articles;
     });

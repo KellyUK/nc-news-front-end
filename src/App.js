@@ -8,7 +8,7 @@ import Article from "./components/Article";
 import Error from "./components/Error";
 
 class App extends Component {
-  state = { loggedIn: false, topic: "" };
+  state = { loggedIn: false, topic: "", sortedBy: "" };
 
   updateTopic = event => {
     const { value } = event.target;
@@ -17,19 +17,26 @@ class App extends Component {
 
   handleLoginClick = event => {
     const { value } = event.target;
-    this.setState({ loggedIn: true });
+    this.setState({ loggedIn: value });
+  };
+
+  handleSortChange = event => {
+    const { value } = event.target;
+    this.setState({ sortedBy: value });
   };
 
   render() {
+    const { sortedBy } = this.state;
     return (
       <div className="App">
         <Header
           topic={this.updateTopic}
           handleLoginClick={this.handleLoginClick}
+          handleSortChange={this.handleSortChange}
         />
         <Router>
           <Home path="/" />
-          <ArticlesByTopic path="/articles/" />
+          <ArticlesByTopic path="/articles/" sortedBy={sortedBy} />
           <ArticlesByTopic path="/topics/:topic" />
           <Article path="articles/:article_id" />
           <Error default />

@@ -8,7 +8,8 @@ class ArticlesByTopic extends Component {
     articles: [],
     topic: "",
     article_id: null,
-    isLoading: true
+    isLoading: true,
+    sortedBy: ""
   };
 
   fetchArticles = () => {
@@ -32,18 +33,19 @@ class ArticlesByTopic extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.topic !== this.props.topic) {
-      getAllArticles(this.props.topic).then(articles =>
-        this.setState({
-          articles: articles,
-          isLoading: false,
-          topic: this.props.topic
-        }).catch(err => {
+    if (
+      prevProps.topic !== this.props.topic ||
+      prevProps.sortedBy !== this.props.sortedBy
+    ) {
+      if (prevProps.sortedBy !== this.props.sortedBy) {
+        getAllArticles(this.props.topic).then(articles =>
           this.setState({
-            err
-          });
-        })
-      );
+            articles: articles,
+            isLoading: false,
+            topic: this.props.topic
+          })
+        );
+      }
     }
   }
 
