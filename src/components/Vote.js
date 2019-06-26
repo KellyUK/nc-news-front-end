@@ -1,29 +1,34 @@
 import React, { Component } from "react";
-import patchArticleVotes from "../api";
 
 class Vote extends Component {
-  state = { article_id: "", isLoading: true, votes: 0 };
+  state = { article_id: "", isLoading: true, votes: 0, voteChange: 0 };
 
   componentDidMount() {
     const { article_id, votes } = this.props;
     this.setState({
       article_id: article_id,
       votes: votes,
-      isLoading: false
+      isLoading: false,
+      voteChange: 0
     });
   }
 
-  handleVote = increment => {
-    patchArticleVotes;
-  };
-
   render() {
-    const { votes } = this.state;
+    const { votes, voteChange, article_id } = this.state;
+    const { handleVote } = this.props;
     return (
       <div>
-        <p>Votes: {votes}</p>
-        <button>Vote up</button>
-        <button>Vote Down</button>
+        <p>Votes: {this.props.votes + this.state.voteChange}</p>
+        <button
+          onClick={() => handleVote(1)}
+          data={1}
+          disabled={voteChange > 0}
+        >
+          Vote up
+        </button>
+        <button onClick={() => handleVote(-1)} data={-1}>
+          Vote Down
+        </button>
       </div>
     );
   }

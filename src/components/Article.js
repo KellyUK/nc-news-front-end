@@ -5,9 +5,21 @@ import styles from "../style/Article.module.css";
 import Loading from "./Loading";
 import User from "./User";
 import CommentsList from "./CommentsList";
+import { patchArticleVotes } from "../api";
 
 class Article extends Component {
   state = { article: {}, isLoading: true };
+
+  handleVote = votes => {
+    const { article_id } = this.state;
+
+    this.setState(prevState => ({
+      article: { ...prevState.article, votes: prevState.article.votes + votes }
+    }));
+    // patchArticleVotes(article_id, votes).then(article => {
+    //   console.log(article);
+    // });
+  };
 
   componentDidMount() {
     getArticleById(this.props.article_id).then(article => {
@@ -29,7 +41,11 @@ class Article extends Component {
         <User username={username} />
         <h2 className={styles.articleTitle}>{article.title}</h2>
         <p>{article.body}</p>
-        <CommentBar article={article} article_id={article.article_id} />
+        <CommentBar
+          handleVote={this.handleVote}
+          article={article}
+          article_id={article.article_id}
+        />
         <CommentsList
           key={article.article_id}
           article_id={article.article_id}

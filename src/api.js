@@ -35,3 +35,17 @@ export const getUserByUsername = username => {
     return data.user;
   });
 };
+
+export const patchArticleVotes = (article_id, { inc_votes }) => {
+  return request
+    .patch(`articles/${article_id}`, { inc_votes })
+    .then(({ data }) => {
+      return data.article;
+    });
+};
+
+export const postCommentOnArticle = article_id => {
+  return request.post(`articles/${article_id}/comments`).then(({ data }) => {
+    return data.comments;
+  });
+};
