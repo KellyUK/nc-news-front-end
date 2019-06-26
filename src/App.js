@@ -16,13 +16,13 @@ class App extends Component {
 
   handleLoginClick = event => {
     const { value } = event.target;
-    this.setState({ loggedIn: value });
+    this.setState({ loggedIn: true });
   };
 
   render() {
     return (
       <div className="App">
-        <Header topic={this.updateTopic} loggedIn={this.handleLoginClick} />
+        <Header topic={this.updateTopic} onClick={this.handleLoginClick} />
         <Router>
           <Home path="/" />
           <ArticlesByTopic path="/articles/" />

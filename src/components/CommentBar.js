@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import moment from "moment";
-import { Link } from "@reach/router";
 import Vote from "./Vote.js";
 
 class CommentBar extends Component {
