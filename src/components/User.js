@@ -1,11 +1,31 @@
-import React from "react";
+import React, { Component } from "react";
+import { getUserByUsername } from "../api";
+import Loading from "./Loading";
 
-const User = ({ username }) => {
-  return (
-    <div>
-      <p>{username}</p>
-    </div>
-  );
-};
+class User extends Component {
+  state = { user: {}, isLoading: true };
+
+  componentDidMount() {
+    const { username } = this.props;
+    getUserByUsername(username).then(user => {
+      this.setState({
+        user: user,
+        isLoading: false
+      });
+    });
+  }
+  render() {
+    const { user } = this.state;
+    const avatar = user.avatar_url;
+    return this.state.isLoading ? (
+      <Loading isLoading={this.isLoading} />
+    ) : (
+      <div>
+        <p>Written by: {user.name}</p>
+        <img src={avatar} alt="user avatar" />
+      </div>
+    );
+  }
+}
 
 export default User;

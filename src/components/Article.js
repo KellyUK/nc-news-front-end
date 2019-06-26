@@ -1,18 +1,18 @@
 import React, { Component } from "react";
-import { getArticleById, getUserByUsername } from "../api";
+import { getArticleById } from "../api";
 import CommentBar from "./CommentBar";
 import styles from "../style/Article.module.css";
 import Loading from "./Loading";
 import User from "./User";
 
 class Article extends Component {
-  state = { article: {}, loading: true };
+  state = { article: {}, isLoading: true };
 
   componentDidMount() {
     getArticleById(this.props.article_id).then(article => {
       this.setState({
         article: article,
-        loading: false
+        isLoading: false
       });
     });
   }

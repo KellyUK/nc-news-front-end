@@ -31,9 +31,7 @@ export const getAllTopics = () => {
 };
 
 export const getUserByUsername = username => {
-  return request
-    .get("users", { params: { username: username } })
-    .then(({ data }) => {
-      return data.user;
-    });
+  return request.get(`users/${username}`).then(({ data }) => {
+    return data.user;
+  });
 };
