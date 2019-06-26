@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import patchArticleVotes from "../api";
 
 class Vote extends Component {
   state = { article_id: "", isLoading: true, votes: 0 };
@@ -11,6 +12,10 @@ class Vote extends Component {
       isLoading: false
     });
   }
+
+  handleVote = increment => {
+    patchArticleVotes;
+  };
 
   render() {
     const { votes } = this.state;
