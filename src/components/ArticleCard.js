@@ -3,6 +3,7 @@ import moment from "moment";
 import styles from "../style/ArticleCard.module.css";
 import { Link } from "@reach/router";
 import User from "./User";
+import CommentsList from "./CommentsList";
 
 export const ArticleCard = ({ article_id, article }) => {
   const rawDate = article.created_at;

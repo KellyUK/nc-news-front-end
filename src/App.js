@@ -5,7 +5,6 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import ArticlesByTopic from "./components/ArticlesByTopic";
 import Article from "./components/Article";
-import CommentsList from "./components/CommentsList";
 
 class App extends Component {
   state = { loggedIn: false, topic: "" };
@@ -29,7 +28,6 @@ class App extends Component {
           <ArticlesByTopic path="/articles/" />
           <ArticlesByTopic path="/topics/:topic" />
           <Article path="articles/:article_id" />
-          <CommentsList path="article/:article_id/comments" />
         </Router>
       </div>
     );
