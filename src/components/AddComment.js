@@ -1,8 +1,9 @@
 import React from "react";
+import styles from "../style/AddComment.module.css";
 
 const AddComment = () => {
   return (
-    <form>
+    <form className={styles.body}>
       Comment: <input type="text" name="newComment" />
       Name: <input type="text" name="usersName" />
       <button>Add New Comment</button>

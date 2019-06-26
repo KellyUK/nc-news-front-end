@@ -12,7 +12,9 @@ export const Header = () => {
       </div>
       <nav className={styles.navbar}>
         <Link to="/">
-          <button className={styles.navButton}>Home</button>
+          <button className={styles.navButton} value="&#xf0f6">
+            <i className="fas fa-home fa-fw">Home</i>
+          </button>
         </Link>
         <Link to="/articles/">
           <button className={styles.navButton}>Articles</button>

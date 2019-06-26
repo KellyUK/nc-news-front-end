@@ -26,6 +26,7 @@
   color: #15154e;
   border-bottom: solid;
   border-bottom-color: grey;
+  text-align: left;
 }
 
 .navButton:hover {

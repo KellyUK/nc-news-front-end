@@ -1,10 +1,13 @@
 import React from "react";
+import styles from "../style/LoginBar.module.css";
 
-const LoginBar = () => {
+const LoginBar = handleLoginClick => {
+  console.log(handleLoginClick);
   return (
-    <div>
-      <button type="submit">Login</button>
-      <p>Logged in</p>
+    <div className={styles.login}>
+      <button onClick={handleLoginClick} value="true">
+        <i className="fas fa-user">Login</i>
+      </button>
     </div>
   );
 };
