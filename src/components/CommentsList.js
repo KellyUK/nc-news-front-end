@@ -3,22 +3,23 @@ import { getCommentsByArticleId } from "../api";
 import Loading from "./Loading";
 import CommentBody from "./CommentBody";
 import AddComment from "./AddComment";
-import postCommentOnArticle from "../api";
+import { postCommentOnArticle } from "../api";
 
 class CommentsList extends Component {
   state = { comments: [], isLoading: true };
 
   componentDidMount() {
-    getCommentsByArticleId(this.props.article_id).then(comments =>
+    const { article_id } = this.props;
+    getCommentsByArticleId(article_id).then(comments =>
       this.setState({ comments: comments, isLoading: false })
     );
   }
 
-  componentDidUpdate() {
-    postCommentOnArticle(this.props.article_id).then(comments => {
-      this.setState({ comments: comments });
-    });
-  }
+  // componentDidUpdate() {
+  //   postCommentOnArticle(this.props.article_id, comment).then(comments => {
+  //     this.setState({ comments: comments });
+  //   });
+  // }
 
   render() {
     const { comments } = this.state;

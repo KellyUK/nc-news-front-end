@@ -15,9 +15,9 @@ class User extends Component {
     });
   }
   render() {
-    const { user } = this.state;
+    const { user, isLoading } = this.state;
     const avatar = user.avatar_url;
-    return this.state.isLoading ? (
+    return isLoading ? (
       <Loading isLoading={this.isLoading} />
     ) : (
       <div>

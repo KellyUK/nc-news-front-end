@@ -13,10 +13,8 @@ class CommentBar extends Component {
     return (
       <section>
         <Vote article_id={article_id} votes={votes} handleVote={handleVote} />
-        <Link to={`/article/${article_id}/comments`}>
-          <p>Comments: {article.comment_count}</p>
-          <p>Date: {formattedDate}</p>
-        </Link>
+        <p>Comments: {article.comment_count}</p>
+        <p>Date: {formattedDate}</p>
       </section>
     );
   }

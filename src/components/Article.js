@@ -22,7 +22,8 @@ class Article extends Component {
   };
 
   componentDidMount() {
-    getArticleById(this.props.article_id).then(article => {
+    const { article_id } = this.props;
+    getArticleById(article_id).then(article => {
       this.setState({
         article: article,
         isLoading: false
@@ -32,7 +33,6 @@ class Article extends Component {
 
   render() {
     const { article } = this.state;
-
     const username = article.author;
     return this.state.isLoading ? (
       <Loading isLoading={this.isLoading} />
