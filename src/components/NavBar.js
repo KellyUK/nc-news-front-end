@@ -7,7 +7,7 @@ const NavBar = () => {
     <nav className={styles.navbar}>
       <Link to="/">
         <button className={styles.navButton} value="&#xf0f6">
-          <i className="fas fa-home fa-fw">Home</i>
+          Home
         </button>
       </Link>
       <Link to="/articles/">

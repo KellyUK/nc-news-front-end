@@ -1,4 +1,3 @@
-import styles from "../style/AddComment.module.css";
 import React, { Component } from "react";
 import { postCommentOnArticle } from "../api";
 
@@ -6,8 +5,9 @@ class AddComment extends Component {
   state = { body: "", username: "", comment: {} };
 
   handleChange = event => {
+    const { value } = event.target;
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: value
     });
   };
 

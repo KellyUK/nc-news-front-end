@@ -9,6 +9,7 @@ class CommentBar extends Component {
     const rawDate = article.created_at;
     const formattedDate = moment(rawDate).format("YYYY MM DD");
     const votes = article.votes;
+
     return (
       <section>
         <Vote article_id={article_id} votes={votes} handleVote={handleVote} />

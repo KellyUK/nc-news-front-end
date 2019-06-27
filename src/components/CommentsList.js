@@ -23,9 +23,7 @@ class CommentsList extends Component {
       <div>
         <AddComment article_id={article_id} />
         {comments.map(comment => (
-          <div>
-            <CommentBody comment={comment} key={comment.comment_id} />
-          </div>
+          <CommentBody comment={comment} key={comment.comment_id} />
         ))}
       </div>
     );
