@@ -1,10 +1,10 @@
 import React from "react";
 
-const FilterArticlesDropdown = () => {
+const FilterArticlesDropdown = ({ handleSortChange }) => {
   return (
     <div className="dropdown">
       <select>
-        <option onClick={handleSortChange} value="created_at">
+        <option onChange={handleSortChange} value="created_at">
           Newest
         </option>
         <option onChange={handleSortChange} value="votes">

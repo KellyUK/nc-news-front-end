@@ -9,7 +9,8 @@ class ArticlesByTopic extends Component {
     topic: "",
     article_id: null,
     isLoading: true,
-    sortedBy: ""
+    sortedBy: "",
+    loggedIn: ""
   };
 
   fetchArticles = () => {

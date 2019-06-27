@@ -18,7 +18,7 @@ export const ArticleCard = ({ article_id, article }) => {
         <h3>Article by: {article.author}</h3>
         <section className={styles.additional}>
           <p>Votes: {article.votes}</p>
-          <p>Comments: {article.comments}</p>
+          <p>Comments: {article.comment_count}</p>
           <p>Date: {formattedDate}</p>
         </section>
       </Link>
