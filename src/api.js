@@ -57,3 +57,13 @@ export const postCommentOnArticle = (
       return data.comment;
     });
 };
+
+export const deleteCommentById = ({ comment_id }) => {
+  return request
+    .delete(`comments/${comment_id}`)
+    .then(({ data }) => {
+      console.log(data.comment);
+      return data.comment;
+    })
+    .catch(console.dir);
+};

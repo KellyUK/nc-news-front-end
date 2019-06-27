@@ -19,6 +19,7 @@ class AddComment extends Component {
     event.preventDefault();
     postCommentOnArticle(article_id, { author, body }).then(comment => {
       this.props.addComment(comment);
+      this.setState({ body: "", username: "" });
     });
   };
 
