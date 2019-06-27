@@ -1,7 +1,6 @@
 import * as React from "react";
 import styles from "../style/Header.module.css";
 import LoginBar from "./LoginBar";
-import FilterArticlesDropdown from "./FilterArticlesDropdown";
 import NavBar from "./NavBar.js";
 
 export const Header = ({ handleLoginClick, handleSortChange }) => {
@@ -12,7 +11,6 @@ export const Header = ({ handleLoginClick, handleSortChange }) => {
       </div>
       <NavBar />
       <LoginBar handleLoginClick={handleLoginClick} />
-      <FilterArticlesDropdown handleSortChange={handleSortChange} />
     </div>
   );
 };

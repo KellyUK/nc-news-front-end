@@ -15,7 +15,6 @@ class AddComment extends Component {
     const { article_id } = this.props;
     const { username, body } = this.state;
     const author = username;
-    console.log(author);
     event.preventDefault();
     postCommentOnArticle(article_id, { author, body }).then(comment => {
       this.state({ comment: comment });

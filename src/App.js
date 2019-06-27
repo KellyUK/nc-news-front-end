@@ -8,7 +8,7 @@ import Article from "./components/Article";
 import Error from "./components/Error";
 
 class App extends Component {
-  state = { loggedIn: false, topic: "", sorted_by: "" };
+  state = { loggedIn: false, topic: "" };
 
   updateTopic = event => {
     const { value } = event.target;
@@ -20,29 +20,17 @@ class App extends Component {
     this.setState({ loggedIn: value });
   };
 
-  handleSortChange = event => {
-    const { value } = event.target;
-    this.setState({ sorted_by: value });
-  };
-
-  componentDidUpdate(PrevState, PrevProps) {
-    if (PrevState.sorted_by !== this.state.sorted_by) {
-      this.setState({ sorted_by: "comment_count" });
-    }
-  }
-
   render() {
-    const { sorted_by, loggedIn } = this.state;
+    const { loggedIn } = this.state;
     return (
       <div className="App">
         <Header
           topic={this.updateTopic}
           handleLoginClick={this.handleLoginClick}
-          handleSortChange={this.handleSortChange}
         />
         <Router>
           <Home path="/" />
-          <ArticlesByTopic path="/articles/" sorted_by={sorted_by} />
+          <ArticlesByTopic path="/articles/" />
           <ArticlesByTopic path="/topics/:topic" loggedIn={loggedIn} />
           <Article path="articles/:article_id" />
           <Error default />

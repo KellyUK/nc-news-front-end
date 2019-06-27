@@ -11,14 +11,14 @@ class Article extends Component {
   state = { article: {}, isLoading: true };
 
   handleVote = votes => {
-    const { article_id } = this.state;
+    const { article_id } = this.props;
 
     this.setState(prevState => ({
       article: { ...prevState.article, votes: prevState.article.votes + votes }
     }));
-    // patchArticleVotes(article_id, votes).then(article => {
-    //   console.log(article);
-    // });
+    patchArticleVotes(article_id, votes).then(article => {
+      return article;
+    });
   };
 
   componentDidMount() {

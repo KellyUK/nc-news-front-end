@@ -2,46 +2,54 @@ import React, { Component } from "react";
 import { getAllArticles } from "../api";
 import ArticleCard from "./ArticleCard";
 import Loading from "./Loading";
+import SortArticles from "./SortArticles";
 
 class ArticlesByTopic extends Component {
   state = {
     articles: [],
-    topic: "",
     article_id: null,
     isLoading: true,
-    sortedBy: "",
+    sort_by: "",
     loggedIn: ""
   };
 
+  handleSort = event => {
+    const { value } = event.target;
+    this.setState({ sort_by: value });
+  };
+
   fetchArticles = () => {
-    getAllArticles(this.props.topic).then(articles =>
+    const { topic } = this.props;
+    getAllArticles(topic).then(articles =>
       this.setState({
         articles: articles,
-        isLoading: false,
-        topic: this.props.topic
+        isLoading: false
       })
     );
   };
 
   componentDidMount() {
-    getAllArticles(this.props.topic).then(articles =>
+    const { topic } = this.props;
+    getAllArticles(topic).then(articles =>
       this.setState({
         articles: articles,
-        isLoading: false,
-        topic: this.props.topic
+        isLoading: false
       })
     );
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.topic !== this.props.topic) {
-      getAllArticles(this.props.topic).then(articles =>
-        this.setState({
-          articles: articles,
-          isLoading: false,
-          topic: this.props.topic
-        })
-      );
+    const { topic } = this.props;
+    const { sort_by } = this.state;
+    if (prevProps.topic !== topic || prevState.sort_by !== sort_by) {
+      getAllArticles(topic, sort_by)
+        .then(articles =>
+          this.setState({
+            articles: articles,
+            isLoading: false
+          })
+        )
+        .catch(console.dir);
     }
   }
 
@@ -51,6 +59,7 @@ class ArticlesByTopic extends Component {
       <Loading isLoading={this.isLoading} />
     ) : (
       <div>
+        <SortArticles handleSort={this.handleSort} />
         {articles.map(article => (
           <ArticleCard
             key={article.article_id}

@@ -4,10 +4,10 @@ const request = axios.create({
   baseURL: "https://kelly-davidson-nc-news.herokuapp.com/api/"
 });
 
-export const getAllArticles = (topic, comment_count) => {
+export const getAllArticles = (topic, sort_by) => {
   return request
     .get("articles", {
-      params: { topic: topic, sort_by: comment_count }
+      params: { topic: topic, sort_by: sort_by }
     })
     .then(({ data }) => {
       return data.articles;
@@ -43,7 +43,8 @@ export const patchArticleVotes = (article_id, { inc_votes }) => {
     .patch(`articles/${article_id}`, { inc_votes })
     .then(({ data }) => {
       return data.article;
-    });
+    })
+    .catch(console.dir);
 };
 
 export const postCommentOnArticle = (
@@ -53,7 +54,6 @@ export const postCommentOnArticle = (
   return request
     .post(`articles/${article_id}/comments`, { username, body })
     .then(({ data }) => {
-      console.log(data);
       return data.comment;
     });
 };
