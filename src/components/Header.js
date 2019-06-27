@@ -1,6 +1,6 @@
 import * as React from "react";
 import styles from "../style/Header.module.css";
-import LoginBar from "./LoginBar";
+import LoginBar from "./LoginButton";
 import NavBar from "./NavBar.js";
 
 export const Header = ({ handleLoginClick, handleSortChange }) => {

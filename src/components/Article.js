@@ -8,7 +8,7 @@ import CommentsList from "./CommentsList";
 import { patchArticleVotes } from "../api";
 
 class Article extends Component {
-  state = { article: {}, isLoading: true, vote: 0 };
+  state = { article: {}, isLoading: true, voteChange: 0 };
 
   handleVote = votes => {
     const { article_id } = this.props;
@@ -17,7 +17,10 @@ class Article extends Component {
     });
 
     this.setState(prevState => ({
-      article: { ...prevState.article, votes: prevState.article.votes + votes }
+      article: {
+        ...prevState.article,
+        votes: prevState.article.votes + this.state.voteChange
+      }
     }));
     patchArticleVotes(article_id, votes).then(article => {
       console.log(article);
@@ -36,7 +39,7 @@ class Article extends Component {
   }
 
   render() {
-    const { article, votes } = this.state;
+    const { article, voteChange, votes } = this.state;
     const username = article.author;
     return this.state.isLoading ? (
       <Loading isLoading={this.isLoading} />
@@ -50,6 +53,7 @@ class Article extends Component {
           article={article}
           article_id={article.article_id}
           votes={votes}
+          voteChange={voteChange}
         />
         <CommentsList
           key={article.article_id}

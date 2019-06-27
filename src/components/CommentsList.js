@@ -15,17 +15,10 @@ class CommentsList extends Component {
   }
 
   addComment = comment => {
-    console.log(this.state.comments.length);
-    this.setState();
-    this.setState({ comments: [comment, ...this.state.comments] }); //prev state
-    console.log(this.state.comments.length);
+    this.setState((prevState, props) => ({
+      comments: [comment, ...prevState.comments]
+    })); //prev state
   };
-
-  componentDidUpdate(prevProps, prevState) {
-    const { article_id } = this.props;
-    const { comments } = this.state;
-    console.log(prevState.comments.length);
-  }
 
   render() {
     const { comments } = this.state;

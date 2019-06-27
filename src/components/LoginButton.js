@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "../style/LoginBar.module.css";
+import styles from "../style/LoginButton.module.css";
 
-const LoginBar = ({ handleLoginClick }) => {
+const LoginButton = ({ handleLoginClick }) => {
   return (
     <div className={styles.login}>
       <button onClick={handleLoginClick} value="true">
@@ -11,4 +11,4 @@ const LoginBar = ({ handleLoginClick }) => {
   );
 };
 
-export default LoginBar;
+export default LoginButton;

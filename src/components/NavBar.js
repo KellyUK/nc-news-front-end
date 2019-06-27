@@ -5,11 +5,6 @@ import styles from "../style/Header.module.css";
 const NavBar = () => {
   return (
     <nav className={styles.navbar}>
-      <Link to="/">
-        <button className={styles.navButton} value="&#xf0f6">
-          Home
-        </button>
-      </Link>
       <Link to="/articles/">
         <button className={styles.navButton}>Articles</button>
       </Link>
