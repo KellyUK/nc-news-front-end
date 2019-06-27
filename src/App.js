@@ -8,7 +8,7 @@ import Article from "./components/Article";
 import Error from "./components/Error";
 
 class App extends Component {
-  state = { loggedIn: false, topic: "" };
+  state = { loggedIn: "", topic: "" };
 
   updateTopic = event => {
     const { value } = event.target;

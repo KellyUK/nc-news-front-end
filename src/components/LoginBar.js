@@ -4,8 +4,8 @@ import styles from "../style/LoginBar.module.css";
 const LoginBar = ({ handleLoginClick }) => {
   return (
     <div className={styles.login}>
-      <button onClick={handleLoginClick} value={true}>
-        <i className="fas fa-user">Login</i>
+      <button onClick={handleLoginClick} value="true">
+        Login
       </button>
     </div>
   );
