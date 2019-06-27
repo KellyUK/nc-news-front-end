@@ -8,16 +8,19 @@ import CommentsList from "./CommentsList";
 import { patchArticleVotes } from "../api";
 
 class Article extends Component {
-  state = { article: {}, isLoading: true };
+  state = { article: {}, isLoading: true, vote: 0 };
 
   handleVote = votes => {
     const { article_id } = this.props;
+    this.setState({
+      votes: votes
+    });
 
     this.setState(prevState => ({
       article: { ...prevState.article, votes: prevState.article.votes + votes }
     }));
     patchArticleVotes(article_id, votes).then(article => {
-      return article;
+      console.log(article);
     });
   };
 
@@ -26,13 +29,14 @@ class Article extends Component {
     getArticleById(article_id).then(article => {
       this.setState({
         article: article,
-        isLoading: false
+        isLoading: false,
+        votes: article.votes
       });
     });
   }
 
   render() {
-    const { article } = this.state;
+    const { article, votes } = this.state;
     const username = article.author;
     return this.state.isLoading ? (
       <Loading isLoading={this.isLoading} />
@@ -45,6 +49,7 @@ class Article extends Component {
           handleVote={this.handleVote}
           article={article}
           article_id={article.article_id}
+          votes={votes}
         />
         <CommentsList
           key={article.article_id}

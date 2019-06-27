@@ -1,6 +1,10 @@
 .body {
-  padding: 1em;
+  padding: 2em;
   border: double;
   margin-top: 1 em;
   background-color: white;
+}
+
+.title {
+  text-align: left;
 }

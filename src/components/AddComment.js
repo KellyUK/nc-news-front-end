@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { postCommentOnArticle } from "../api";
+import styles from "../style/AddComment.module.css";
 
 class AddComment extends Component {
-  state = { body: "", username: "", comment: {} };
+  state = { body: "", username: "" };
 
   handleChange = event => {
     const { value } = event.target;
@@ -17,7 +18,7 @@ class AddComment extends Component {
     const author = username;
     event.preventDefault();
     postCommentOnArticle(article_id, { author, body }).then(comment => {
-      this.state({ comment: comment });
+      this.props.addComment(comment);
     });
   };
 
@@ -25,7 +26,8 @@ class AddComment extends Component {
     const { body, username } = this.state;
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form className={styles.body} onSubmit={this.handleSubmit}>
+          <p className={styles.title}>Have your say:</p>
           <label>
             Comment:
             <input name="body" value={body} onChange={this.handleChange} />

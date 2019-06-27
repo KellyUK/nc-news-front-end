@@ -5,18 +5,17 @@ class Vote extends Component {
 
   componentDidMount() {
     this.setState({
-      isLoading: false,
-      voteChange: 0
+      isLoading: false
     });
   }
 
   render() {
     const { voteChange } = this.state;
-    const { handleVote } = this.props;
+    const { handleVote, votes } = this.props;
     return (
       <div>
-        <p>Votes: {this.props.votes + this.state.voteChange}</p>
-        <button onClick={() => handleVote(1)} disabled={voteChange > 0}>
+        <p>Votes: {votes + voteChange}</p>
+        <button onClick={() => handleVote(1)} disabled={voteChange === 1}>
           Vote up
         </button>
         <button onClick={() => handleVote(-1)}>Vote Down</button>
