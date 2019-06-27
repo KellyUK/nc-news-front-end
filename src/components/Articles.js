@@ -4,7 +4,7 @@ import ArticleCard from "./ArticleCard";
 import Loading from "./Loading";
 import SortArticles from "./SortArticles";
 
-class ArticlesByTopic extends Component {
+class Articles extends Component {
   state = {
     articles: [],
     article_id: null,
@@ -72,4 +72,4 @@ class ArticlesByTopic extends Component {
   }
 }
 
-export default ArticlesByTopic;
+export default Articles;

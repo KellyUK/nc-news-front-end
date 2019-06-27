@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import moment from "moment";
 import Vote from "./Vote.js";
+import styles from "../style/ArticleInformation.module.css";
 
-class CommentBar extends Component {
+class ArticleInformation extends Component {
   render() {
     const { article, article_id, handleVote, votes } = this.props;
     const rawDate = article.created_at;
     const formattedDate = moment(rawDate).format("YYYY MM DD");
     return (
-      <section>
+      <section className={styles.body}>
         <Vote article_id={article_id} votes={votes} handleVote={handleVote} />
         <p>Comments: {article.comment_count}</p>
         <p>Date: {formattedDate}</p>
@@ -17,4 +18,4 @@ class CommentBar extends Component {
   }
 }
 
-export default CommentBar;
+export default ArticleInformation;

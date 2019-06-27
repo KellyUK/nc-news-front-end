@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "../style/CommentBody.module.css";
+import styles from "../style/CommentCard.module.css";
 import moment from "moment";
 
-const CommentBody = ({ comment }) => {
+const CommentCard = ({ comment }) => {
   const rawDate = comment.created_at;
   const formattedDate = moment(rawDate).format("YYYY MM DD");
   return (
@@ -15,4 +15,4 @@ const CommentBody = ({ comment }) => {
   );
 };
 
-export default CommentBody;
+export default CommentCard;

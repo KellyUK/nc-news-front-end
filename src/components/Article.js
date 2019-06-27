@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { getArticleById } from "../api";
-import CommentBar from "./CommentBar";
+import ArticleInformation from "./ArticleInformation";
 import styles from "../style/Article.module.css";
 import Loading from "./Loading";
 import User from "./User";
@@ -48,7 +48,7 @@ class Article extends Component {
         <User username={username} />
         <h2 className={styles.articleTitle}>{article.title}</h2>
         <p>{article.body}</p>
-        <CommentBar
+        <ArticleInformation
           handleVote={this.handleVote}
           article={article}
           article_id={article.article_id}

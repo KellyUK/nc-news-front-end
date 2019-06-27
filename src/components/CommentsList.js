@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { getCommentsByArticleId } from "../api";
 import Loading from "./Loading";
-import CommentBody from "./CommentBody";
+import CommentCard from "./CommentCard";
 import AddComment from "./AddComment";
 
 class CommentsList extends Component {
@@ -15,9 +15,9 @@ class CommentsList extends Component {
   }
 
   addComment = comment => {
-    this.setState((prevState, props) => ({
+    this.setState(prevState => ({
       comments: [comment, ...prevState.comments]
-    })); //prev state
+    }));
   };
 
   render() {
@@ -29,7 +29,7 @@ class CommentsList extends Component {
       <div>
         <AddComment article_id={article_id} addComment={this.addComment} />
         {comments.map(comment => (
-          <CommentBody comment={comment} key={comment.comment_id} />
+          <CommentCard comment={comment} key={comment.comment_id} />
         ))}
       </div>
     );
