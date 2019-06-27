@@ -1,36 +1,47 @@
 import styles from "../style/AddComment.module.css";
 import React, { Component } from "react";
+import { postCommentOnArticle } from "../api";
 
 class AddComment extends Component {
-  // state = { userInput: value };
+  state = { body: "", username: "", comment: {} };
 
   handleChange = event => {
-    const { value } = event.target;
-    this.setState({ userInput: value });
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+
+  handleSubmit = event => {
+    const { article_id } = this.props;
+    const { username, body } = this.state;
+    const author = username;
+    console.log(author);
+    event.preventDefault();
+    postCommentOnArticle(article_id, { author, body }).then(comment => {
+      this.state({ comment: comment });
+    });
   };
 
   render() {
-    const { userInput } = this.state;
+    const { body, username } = this.state;
     return (
-      <form
-        className={styles.body}
-        onSubmit={event => {
-          event.preventDefault();
-          this.props.updateComment(this.state.userInput);
-          this.setState({ userInput: "" });
-        }}
-      >
-        Comment:{""}
-        <input
-          type="text"
-          name="newComment"
-          // value={this.state.userInput}
-          // onChange
-          // {...updateComment}
-        />
-        Name: <input type="text" name="usersName" />
-        <button>Add New Comment</button>
-      </form>
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Comment:
+            <input name="body" value={body} onChange={this.handleChange} />
+          </label>
+          <label>
+            Username:
+            <input
+              name="username"
+              value={username}
+              onChange={this.handleChange}
+            />
+          </label>
+          <button>Submit</button>
+        </form>
+      </div>
     );
   }
 }

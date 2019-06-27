@@ -25,6 +25,12 @@ class App extends Component {
     this.setState({ sorted_by: value });
   };
 
+  componentDidUpdate(PrevState, PrevProps) {
+    if (PrevState.sorted_by !== this.state.sorted_by) {
+      this.setState({ sorted_by: "comment_count" });
+    }
+  }
+
   render() {
     const { sorted_by, loggedIn } = this.state;
     return (

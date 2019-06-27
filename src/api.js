@@ -46,9 +46,14 @@ export const patchArticleVotes = (article_id, { inc_votes }) => {
     });
 };
 
-export const postCommentOnArticle = (article_id, {}) => {
-  return request.post(`articles/${article_id}/comments`).then(({ body }) => {
-    console.log(body);
-    return body.comments;
-  });
+export const postCommentOnArticle = (
+  article_id,
+  { author: username, body }
+) => {
+  return request
+    .post(`articles/${article_id}/comments`, { username, body })
+    .then(({ data }) => {
+      console.log(data);
+      return data.comment;
+    });
 };
