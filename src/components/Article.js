@@ -9,7 +9,6 @@ import { patchArticleVotes } from "../api";
 
 class Article extends Component {
   state = { article: {}, isLoading: true, voteChange: 0 };
-
   handleVote = voteChange => {
     const { article_id } = this.state.article;
     patchArticleVotes(article_id, { inc_votes: voteChange });
