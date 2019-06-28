@@ -20,6 +20,7 @@ class Articles extends Component {
 
   fetchArticles = () => {
     const { topic } = this.props;
+    console.log(topic);
     getAllArticles(topic).then(articles =>
       this.setState({
         articles: articles,

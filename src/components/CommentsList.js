@@ -25,7 +25,7 @@ class CommentsList extends Component {
     event.preventDefault();
     const { article_id } = this.props;
     const { value } = event.target;
-    deleteCommentById({ comment_id: value }).then(
+    deleteCommentById({ comment_id: value }).then(() =>
       getCommentsByArticleId(article_id).then(comments => {
         this.setState({ comments: comments });
       })
