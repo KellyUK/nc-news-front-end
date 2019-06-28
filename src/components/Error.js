@@ -1,20 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Error extends Component {
-  state = {
-    stuff: null,
-    err: null
-  };
-
-  componentDidMount = () => {
-    this.getContent();
-  };
-
-  getContent = () => {};
-
-  render() {
-    return <div />;
-  }
-}
+const Error = ({ err }) => {
+  return (
+    <div>
+      <p>Error</p>
+      <p>Message: {err}</p>
+    </div>
+  );
+};
 
 export default Error;

@@ -9,7 +9,7 @@ import { patchArticleVotes } from "../api";
 import Error from "./Error";
 
 class Article extends Component {
-  state = { article: {}, isLoading: true, err: null, voteChange: 0 };
+  state = { article: {}, isLoading: true, err: false, voteChange: 0 };
   handleVote = voteChange => {
     const { article_id } = this.state.article;
     patchArticleVotes(article_id, { inc_votes: voteChange });
@@ -41,7 +41,7 @@ class Article extends Component {
     const { article, voteChange, votes, err, isLoading } = this.state;
     const username = article.author;
     return err ? (
-      <Error />
+      <Error err={err.response.data.message} />
     ) : isLoading ? (
       <Loading isLoading={this.isLoading} />
     ) : (
