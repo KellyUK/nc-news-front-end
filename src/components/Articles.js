@@ -54,14 +54,16 @@ class Articles extends Component {
             isLoading: false
           })
         )
-        .catch(console.dir);
+        .catch(err => {
+          this.setState({ err });
+        });
     }
   }
 
   render() {
     const { articles, isLoading, err } = this.state;
     return err ? (
-      <Error />
+      <Error err={err.response.data.message} />
     ) : isLoading ? (
       <Loading isLoading={this.isLoading} />
     ) : (

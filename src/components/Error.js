@@ -1,10 +1,11 @@
 import React from "react";
 
 const Error = ({ err }) => {
+  console.log(err);
   return (
     <div>
       <p>Error</p>
-      <p>Message: {err}</p>
+      <p>Message: {"Page Not Found" || err}</p>
     </div>
   );
 };
