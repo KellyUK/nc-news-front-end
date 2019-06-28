@@ -12,7 +12,7 @@ class Articles extends Component {
     isLoading: true,
     sort_by: "",
     loggedIn: "",
-    err: null
+    err: false
   };
 
   handleSort = event => {
@@ -55,13 +55,14 @@ class Articles extends Component {
           })
         )
         .catch(err => {
-          this.setState({ err });
+          this.setState({ err: false });
         });
     }
   }
 
   render() {
     const { articles, isLoading, err } = this.state;
+    console.log(err);
     return err ? (
       <Error err={err.response.data.message} />
     ) : isLoading ? (
