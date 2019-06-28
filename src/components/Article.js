@@ -10,21 +10,16 @@ import { patchArticleVotes } from "../api";
 class Article extends Component {
   state = { article: {}, isLoading: true, voteChange: 0 };
 
-  handleVote = votes => {
-    const { article_id } = this.props;
-    this.setState({
-      votes: votes
-    });
-
+  handleVote = voteChange => {
+    const { article_id } = this.state.article;
+    patchArticleVotes(article_id, { inc_votes: voteChange });
     this.setState(prevState => ({
+      voteChange: prevState.article.votes + voteChange,
       article: {
         ...prevState.article,
-        votes: prevState.article.votes + this.state.voteChange
+        votes: prevState.article.votes + voteChange
       }
     }));
-    patchArticleVotes(article_id, votes).then(article => {
-      console.log(article);
-    });
   };
 
   componentDidMount() {
@@ -52,7 +47,7 @@ class Article extends Component {
           handleVote={this.handleVote}
           article={article}
           article_id={article.article_id}
-          votes={votes}
+          votes={votes + voteChange}
           voteChange={voteChange}
         />
         <CommentsList

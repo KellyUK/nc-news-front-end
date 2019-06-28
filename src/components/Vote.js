@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 class Vote extends Component {
-  state = { isLoading: true, voteChange: 0 };
+  state = { isLoading: true };
 
   componentDidMount() {
     this.setState({
@@ -10,19 +10,22 @@ class Vote extends Component {
   }
 
   render() {
-    const { voteChange } = this.state;
-    const { handleVote, votes } = this.props;
+    const { handleVote, votes, voteChange } = this.props;
     return (
       <div>
-        <p>Votes: {votes + voteChange}</p>
+        <p>Votes: {votes}</p>
         <button
           onClick={() => handleVote(1)}
-          data-default-text="vote!"
-          data-alt-text="Thanks for voting"
+          disabled={this.props.voteChange >= 1}
         >
-          Vote up
+          Vote Up
         </button>
-        <button onClick={() => handleVote(-1)}>Vote Down</button>
+        <button
+          onClick={() => handleVote(-1)}
+          disabled={this.props.voteChange > 1}
+        >
+          Vote Down
+        </button>
       </div>
     );
   }

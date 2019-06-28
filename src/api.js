@@ -38,10 +38,11 @@ export const getUserByUsername = username => {
   });
 };
 
-export const patchArticleVotes = (article_id, { inc_votes }) => {
+export const patchArticleVotes = (article_id, { inc_votes: voteChange }) => {
   return request
-    .patch(`articles/${article_id}`, { inc_votes })
+    .patch(`articles/${article_id}`, { inc_votes: voteChange })
     .then(({ data }) => {
+      console.log(data);
       return data.article;
     })
     .catch(console.dir);

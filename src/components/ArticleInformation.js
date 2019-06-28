@@ -5,12 +5,18 @@ import styles from "../style/ArticleInformation.module.css";
 
 class ArticleInformation extends Component {
   render() {
-    const { article, article_id, handleVote, votes } = this.props;
+    const { article, article_id, handleVote, votes, voteChange } = this.props;
     const rawDate = article.created_at;
     const formattedDate = moment(rawDate).format("YYYY MM DD");
     return (
       <section className={styles.body}>
-        <Vote article_id={article_id} votes={votes} handleVote={handleVote} />
+        <Vote
+          article_id={article_id}
+          votes={votes}
+          handleVote={handleVote}
+          votes={votes}
+          voteChange={voteChange}
+        />
         <p>Comments: {article.comment_count}</p>
         <p>Date: {formattedDate}</p>
       </section>
