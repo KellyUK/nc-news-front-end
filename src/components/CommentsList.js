@@ -6,7 +6,7 @@ import AddComment from "./AddComment";
 import { get } from "http";
 
 class CommentsList extends Component {
-  state = { comments: [], isLoading: true };
+  state = { comments: [], isLoading: true, formValid: false };
 
   componentDidMount() {
     const { article_id } = this.props;

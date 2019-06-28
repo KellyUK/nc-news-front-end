@@ -14,16 +14,10 @@ class Vote extends Component {
     return (
       <div>
         <p>Votes: {votes}</p>
-        <button
-          onClick={() => handleVote(1)}
-          disabled={this.props.voteChange >= 1}
-        >
+        <button onClick={() => handleVote(1)} disabled={voteChange - votes > 1}>
           Vote Up
         </button>
-        <button
-          onClick={() => handleVote(-1)}
-          disabled={this.props.voteChange > 1}
-        >
+        <button onClick={() => handleVote(-1)} disabled={voteChange > 1}>
           Vote Down
         </button>
       </div>

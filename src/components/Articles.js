@@ -3,6 +3,7 @@ import { getAllArticles } from "../api";
 import ArticleCard from "./ArticleCard";
 import Loading from "./Loading";
 import SortArticles from "./SortArticles";
+import Error from "./Error";
 
 class Articles extends Component {
   state = {
@@ -10,7 +11,8 @@ class Articles extends Component {
     article_id: null,
     isLoading: true,
     sort_by: "",
-    loggedIn: ""
+    loggedIn: "",
+    err: null
   };
 
   handleSort = event => {
@@ -20,13 +22,15 @@ class Articles extends Component {
 
   fetchArticles = () => {
     const { topic } = this.props;
-    console.log(topic);
-    getAllArticles(topic).then(articles =>
-      this.setState({
-        articles: articles,
-        isLoading: false
-      })
-    );
+
+    getAllArticles(topic)
+      .then(articles =>
+        this.setState({
+          articles: articles,
+          isLoading: false
+        })
+      )
+      .catch(console.dir);
   };
 
   componentDidMount() {
@@ -55,8 +59,10 @@ class Articles extends Component {
   }
 
   render() {
-    const { articles } = this.state;
-    return this.state.isLoading ? (
+    const { articles, isLoading, err } = this.state;
+    return err ? (
+      <Error />
+    ) : isLoading ? (
       <Loading isLoading={this.isLoading} />
     ) : (
       <div>

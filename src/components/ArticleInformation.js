@@ -8,6 +8,7 @@ class ArticleInformation extends Component {
     const { article, article_id, handleVote, votes, voteChange } = this.props;
     const rawDate = article.created_at;
     const formattedDate = moment(rawDate).format("YYYY MM DD");
+    console.log("votes in article info", this.props.votes);
     return (
       <section className={styles.body}>
         <Vote

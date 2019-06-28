@@ -6,9 +6,10 @@ import Loading from "./Loading";
 import User from "./User";
 import CommentsList from "./CommentsList";
 import { patchArticleVotes } from "../api";
+import Error from "./Error";
 
 class Article extends Component {
-  state = { article: {}, isLoading: true, voteChange: 0 };
+  state = { article: {}, isLoading: true, err: null, voteChange: 0 };
   handleVote = voteChange => {
     const { article_id } = this.state.article;
     patchArticleVotes(article_id, { inc_votes: voteChange });
@@ -23,19 +24,25 @@ class Article extends Component {
 
   componentDidMount() {
     const { article_id } = this.props;
-    getArticleById(article_id).then(article => {
-      this.setState({
-        article: article,
-        isLoading: false,
-        votes: article.votes
+    getArticleById(article_id)
+      .then(article => {
+        this.setState({
+          article: article,
+          isLoading: false,
+          votes: article.votes
+        });
+      })
+      .catch(err => {
+        this.setState({ err });
       });
-    });
   }
 
   render() {
-    const { article, voteChange, votes } = this.state;
+    const { article, voteChange, votes, err, isLoading } = this.state;
     const username = article.author;
-    return this.state.isLoading ? (
+    return err ? (
+      <Error />
+    ) : isLoading ? (
       <Loading isLoading={this.isLoading} />
     ) : (
       <div className={styles.article}>
