@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getUserByUsername } from "../api";
 import Loading from "./Loading";
+import styles from "../style/User.module.css";
 
 class User extends Component {
   state = { user: {}, isLoading: true };
@@ -21,8 +22,8 @@ class User extends Component {
       <Loading isLoading={this.isLoading} />
     ) : (
       <div>
+        <img className={styles.pic} src={avatar} alt="user avatar" />
         <p>Written by: {user.name}</p>
-        <img src={avatar} alt="user avatar" />
       </div>
     );
   }

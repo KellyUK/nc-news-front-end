@@ -10,7 +10,7 @@ class Articles extends Component {
     articles: [],
     article_id: null,
     isLoading: true,
-    sort_by: "",
+    sort_by: "created_at",
     loggedIn: "",
     err: false
   };
@@ -62,7 +62,7 @@ class Articles extends Component {
 
   render() {
     const { articles, isLoading, err } = this.state;
-    console.log(err);
+
     return err ? (
       <Error err={err.response.data.message} />
     ) : isLoading ? (

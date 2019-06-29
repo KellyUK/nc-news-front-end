@@ -7,12 +7,7 @@ import Article from "./components/Article";
 import Error from "./components/Error";
 
 class App extends Component {
-  state = { loggedIn: "", topic: "" };
-
-  updateTopic = event => {
-    const { value } = event.target;
-    this.setState({ topic: value });
-  };
+  state = { loggedIn: "" };
 
   handleLoginClick = event => {
     const { value } = event.target;
@@ -23,10 +18,7 @@ class App extends Component {
     const { loggedIn } = this.state;
     return (
       <div className="App">
-        <Header
-          topic={this.updateTopic}
-          handleLoginClick={this.handleLoginClick}
-        />
+        <Header handleLoginClick={this.handleLoginClick} />
         <Router>
           <Articles path="/articles/" />
           <Articles path="/topics/:topic" loggedIn={loggedIn} />
