@@ -15,11 +15,11 @@ class Article extends Component {
     const { article_id } = this.state.article;
     patchArticleVotes(article_id, { inc_votes: voteChange });
     this.setState(prevState => ({
-      voteChange: prevState.article.votes + voteChange,
-      article: {
-        ...prevState.article,
-        votes: prevState.article.votes + voteChange
-      }
+      voteChange: prevState.article.votes + voteChange
+      // article: {
+      //   ...prevState.article,
+      //   votes: prevState.article.votes
+      // }
     }));
   };
 

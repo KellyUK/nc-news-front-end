@@ -5,7 +5,6 @@ import moment from "moment";
 const CommentCard = ({ comment, deleteComment, comment_id, user }) => {
   const rawDate = comment.created_at;
   const formattedDate = moment(rawDate).format("Do MMM YYYY");
-  console.log(comment.author, user);
 
   return (
     <div className={styles.commentCardBody}>

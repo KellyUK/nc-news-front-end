@@ -42,7 +42,6 @@ export const patchArticleVotes = (article_id, { inc_votes: voteChange }) => {
   return request
     .patch(`articles/${article_id}`, { inc_votes: voteChange })
     .then(({ data }) => {
-      console.log(data);
       return data.article;
     })
     .catch(console.dir);
@@ -63,7 +62,6 @@ export const deleteCommentById = ({ comment_id }) => {
   return request
     .delete(`comments/${comment_id}`)
     .then(({ data }) => {
-      console.log(data.comment);
       return data.comment;
     })
     .catch(console.dir);
