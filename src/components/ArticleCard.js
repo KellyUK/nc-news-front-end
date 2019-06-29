@@ -6,7 +6,7 @@ import User from "./User";
 
 export const ArticleCard = ({ article_id, article }) => {
   const rawDate = article.created_at;
-  const formattedDate = moment(rawDate).format("YYYY MM DD");
+  const formattedDate = moment(rawDate).format("Do MMM YY");
   const username = article.author;
 
   return (
@@ -19,7 +19,7 @@ export const ArticleCard = ({ article_id, article }) => {
         <section className={styles.additional}>
           <p>Votes: {article.votes}</p>
           <p>Comments: {article.comment_count}</p>
-          <p>Date: {formattedDate}</p>
+          <p>{formattedDate}</p>
         </section>
       </Link>
     </div>

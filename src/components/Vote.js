@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styles from "../style/Vote.module.css";
 
 class Vote extends Component {
   state = { isLoading: true };
@@ -14,11 +15,19 @@ class Vote extends Component {
     return (
       <div>
         <p>Votes: {votes}</p>
-        <button onClick={() => handleVote(1)} disabled={voteChange - votes > 1}>
-          Vote Up
+        <button
+          className={styles.button}
+          onClick={() => handleVote(1)}
+          disabled={voteChange - votes > 1}
+        >
+          <i className="fas fa-thumbs-up" />
         </button>
-        <button onClick={() => handleVote(-1)} disabled={voteChange > 1}>
-          Vote Down
+        <button
+          className={styles.button}
+          onClick={() => handleVote(-1)}
+          disabled={voteChange > 1}
+        >
+          <i className="fas fa-thumbs-down" />
         </button>
       </div>
     );

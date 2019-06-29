@@ -1,5 +1,9 @@
 .body {
-  border-style: double;
-  display: flex;
-  justify-content: center;
+  border-top: solid grey;
+}
+
+@media only screen and (max-width: 600px) {
+  .body {
+    font-size: 10px;
+  }
 }

@@ -7,6 +7,7 @@ import User from "./User";
 import CommentsList from "./CommentsList";
 import { patchArticleVotes } from "../api";
 import Error from "./Error";
+import moment from "moment";
 
 class Article extends Component {
   state = { article: {}, isLoading: true, err: false, voteChange: 0 };
@@ -39,16 +40,20 @@ class Article extends Component {
 
   render() {
     const { article, voteChange, votes, err, isLoading } = this.state;
+    const { user } = this.props;
     const username = article.author;
+    const rawDate = article.created_at;
+    const formattedDate = moment(rawDate).format("MMM Do YYYY");
     return err ? (
       <Error err={err.response.data.message} />
     ) : isLoading ? (
       <Loading isLoading={this.isLoading} />
     ) : (
       <div className={styles.article}>
-        <User username={username} />
         <h2 className={styles.articleTitle}>{article.title}</h2>
-        <p>{article.body}</p>
+        <p className={styles.body}>{article.body}</p>
+        <User username={username} />
+        <p>{formattedDate}</p>
         <ArticleInformation
           handleVote={this.handleVote}
           article={article}
@@ -59,6 +64,7 @@ class Article extends Component {
         <CommentsList
           key={article.article_id}
           article_id={article.article_id}
+          user={user}
         />
       </div>
     );

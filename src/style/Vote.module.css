@@ -1,0 +1,20 @@
+.button {
+  padding: 10px;
+  font-size: 2em;
+  color: #15154e;
+  border: none;
+}
+
+.button:hover {
+  background: lightgray;
+}
+
+@media only screen and (max-width: 400px) {
+  .button {
+    font-size: 1.5em;
+    background-color: white;
+  }
+  .button:active {
+    background-color: lightgrey;
+  }
+}

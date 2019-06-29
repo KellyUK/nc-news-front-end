@@ -7,7 +7,7 @@ import Article from "./components/Article";
 import Error from "./components/Error";
 
 class App extends Component {
-  state = { loggedIn: "" };
+  state = { loggedIn: "", user: "JessJelly" };
 
   handleLoginClick = event => {
     const { value } = event.target;
@@ -15,14 +15,14 @@ class App extends Component {
   };
 
   render() {
-    const { loggedIn } = this.state;
+    const { loggedIn, user } = this.state;
     return (
       <div className="App">
-        <Header handleLoginClick={this.handleLoginClick} />
+        <Header user={user} />
         <Router>
           <Articles path="/articles/" />
           <Articles path="/topics/:topic" loggedIn={loggedIn} />
-          <Article path="articles/:article_id" />
+          <Article path="articles/:article_id" user={user} />
           <Error default />
         </Router>
       </div>

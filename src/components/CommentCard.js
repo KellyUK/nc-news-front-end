@@ -2,18 +2,24 @@ import React from "react";
 import styles from "../style/CommentCard.module.css";
 import moment from "moment";
 
-const CommentCard = ({ comment, deleteComment, comment_id }) => {
+const CommentCard = ({ comment, deleteComment, comment_id, user }) => {
   const rawDate = comment.created_at;
-  const formattedDate = moment(rawDate).format("YYYY MM DD");
+  const formattedDate = moment(rawDate).format("Do MMM YYYY");
+  console.log(comment.author, user);
 
   return (
-    <div className={styles.body}>
+    <div className={styles.commentCardBody}>
       <p>{comment.body}</p>
       <p>Votes:{comment.votes}</p>
       <p>Author:{comment.author}</p>
       <p>{formattedDate}</p>
-      <button onClick={deleteComment} value={comment_id}>
-        Delete Comment
+      <button
+        className={styles.deletebutton}
+        onClick={deleteComment}
+        disabled={comment.author !== user}
+        value={comment_id}
+      >
+        Delete
       </button>
     </div>
   );

@@ -6,7 +6,7 @@ import AddComment from "./AddComment";
 import { get } from "http";
 
 class CommentsList extends Component {
-  state = { comments: [], isLoading: true, formValid: false };
+  state = { comments: [], isLoading: true };
 
   componentDidMount() {
     const { article_id } = this.props;
@@ -23,7 +23,7 @@ class CommentsList extends Component {
 
   deleteComment = event => {
     event.preventDefault();
-    const { article_id } = this.props;
+    const { article_id, user } = this.props;
     const { value } = event.target;
     deleteCommentById({ comment_id: value }).then(() =>
       getCommentsByArticleId(article_id).then(comments => {
@@ -31,21 +31,25 @@ class CommentsList extends Component {
       })
     );
   };
-
   render() {
     const { comments } = this.state;
-    const { article_id } = this.props;
+    const { article_id, user } = this.props;
     return this.state.isLoading ? (
       <Loading isLoading={this.isLoading} />
     ) : (
       <div>
-        <AddComment article_id={article_id} addComment={this.addComment} />
+        <AddComment
+          article_id={article_id}
+          addComment={this.addComment}
+          user={user}
+        />
         {comments.map(comment => (
           <CommentCard
             comment={comment}
             key={comment.comment_id}
             comment_id={comment.comment_id}
             deleteComment={this.deleteComment}
+            user={user}
           />
         ))}
       </div>

@@ -1,16 +1,32 @@
 import React from "react";
+import styles from "../style/SortArticles.module.css";
 
 const SortArticles = ({ handleSort }) => {
   return (
-    <div className="dropdown">
-      <button name="comment_count" value="comment_count" onClick={handleSort}>
+    <div className={styles.sortButtons}>
+      <button
+        className={styles.button}
+        name="comment_count"
+        value="comment_count"
+        onClick={handleSort}
+      >
         Most Comments
       </button>
-      <button name="created_at" value="created_at" onClick={handleSort}>
+      <button
+        className={styles.button}
+        name="created_at"
+        value="created_at"
+        onClick={handleSort}
+      >
         Most Recent
       </button>
-      <button name="votes" value="votes" onClick={handleSort}>
-        Votes
+      <button
+        className={styles.button}
+        name="votes"
+        value="votes"
+        onClick={handleSort}
+      >
+        Most Votes
       </button>
     </div>
   );

@@ -1,5 +1,10 @@
-.body {
+.commentCardBody {
   border: double;
   background-color: white;
   margin: 2em;
+  text-align: left;
+}
+
+.deletebutton:disabled {
+  display: none;
 }
