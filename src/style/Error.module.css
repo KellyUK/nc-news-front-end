@@ -1,7 +1,6 @@
 .error {
   background-color: #15154e;
   width: 30%;
-  height: auto;
   margin: auto;
   padding: 3em;
   color: white;
@@ -9,15 +8,11 @@
 }
 
 .errorButton {
-  padding: 1em;
-  margin: 1em;
+  padding: 0.5em;
+  margin: 1em auto;
   font-weight: bold;
   font-size: 110%;
+  background-color: white;
+  color: #15154e;
   border: solid 4px #8c1f20;
-}
-
-.errorButton:hover {
-  background-color: #15154e;
-  color: white;
-  border-color: white;
 }
