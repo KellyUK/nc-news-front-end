@@ -7,16 +7,18 @@ This a single page, responsive, news application built to demonstrate front-end 
 ## NC News-Back-End
 
 hosted on Heroku: <https://kelly-davidson-nc-news.herokuapp.com/api/>
+
 Github Link: <https://github.com/KellyUK/nc_news>
 
 ## NC News-Front-End
 
 Hosted on Netlify: <https://kellydavidson-news-project.netlify.com/topics/coding>
+
 Github Link: <https://github.com/KellyUK/nc-news-front-end>
 
 ## Built with
 
-- [React]:(https://reactjs.org/)
+- [React]:[https://reactjs.org/]
 - [CSS Modules]:(https://github.com/css-modules/css-modules)
 - [Reach Router]:(https://reach.tech/router)
 - [Font Awesome]:(https://fontawesome.com/start)
