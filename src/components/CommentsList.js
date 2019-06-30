@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { getCommentsByArticleId, deleteCommentById } from "../api";
-import Loading from "./Loading";
 import CommentCard from "./CommentCard";
 import AddComment from "./AddComment";
 
@@ -22,7 +21,7 @@ class CommentsList extends Component {
 
   deleteComment = event => {
     event.preventDefault();
-    const { article_id, user } = this.props;
+    const { article_id } = this.props;
     const { value } = event.target;
     deleteCommentById({ comment_id: value }).then(() =>
       getCommentsByArticleId(article_id).then(comments => {
@@ -33,11 +32,19 @@ class CommentsList extends Component {
 
   render() {
     const { comments } = this.state;
+    const length = this.state.comments.length;
     const { article_id, user } = this.props;
-    return this.state.isLoading ? (
-      <Loading isLoading={this.isLoading} />
+    return length === 0 ? (
+      <section>
+        <p>No comments</p>
+        <AddComment
+          article_id={article_id}
+          addComment={this.addComment}
+          user={user}
+        />
+      </section>
     ) : (
-      <div>
+      <section>
         <AddComment
           article_id={article_id}
           addComment={this.addComment}
@@ -52,9 +59,8 @@ class CommentsList extends Component {
             user={user}
           />
         ))}
-      </div>
+      </section>
     );
   }
 }
-
 export default CommentsList;

@@ -27,6 +27,7 @@
   background-color: #555;
   padding: 0.5em;
   color: white;
+  margin: 0px;
 }
 
 @media only screen and (max-width: 400px) {
@@ -35,5 +36,11 @@
   }
   h2 {
     font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 400px) {
+  .popularTitle {
+    margin-top: 20px;
   }
 }

@@ -1,6 +1,6 @@
 img {
   width: 8%;
-  display: flex;
+  margin: auto;
   border: solid;
   border-width: 1px;
 }

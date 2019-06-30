@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Vote from "./Vote.js";
 import styles from "../style/ArticleInformation.module.css";
 

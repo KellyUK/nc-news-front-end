@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { getAllArticles } from "../api";
 import ArticleCard from "./ArticleCard";
 import Loading from "./Loading";
-import SortArticles from "./SortArticles";
 import Error from "./Error";
 import coding from "../images/coding.jpeg";
 import cooking from "../images/cooking.jpeg";
