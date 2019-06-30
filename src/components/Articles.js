@@ -23,6 +23,16 @@ class Articles extends Component {
   fetchArticles = () => {
     const { topic } = this.props;
 
+    getAllArticles(topic).then(articles =>
+      this.setState({
+        articles: articles,
+        isLoading: false
+      })
+    );
+  };
+
+  componentDidMount() {
+    const { topic } = this.props;
     getAllArticles(topic)
       .then(articles =>
         this.setState({
@@ -30,33 +40,21 @@ class Articles extends Component {
           isLoading: false
         })
       )
-      .catch(console.dir);
-  };
-
-  componentDidMount() {
-    const { topic } = this.props;
-    getAllArticles(topic).then(articles =>
-      this.setState({
-        articles: articles,
-        isLoading: false
-      })
-    );
+      .catch(err => {
+        this.setState({ err });
+      });
   }
 
   componentDidUpdate(prevProps, prevState) {
     const { topic } = this.props;
     const { sort_by } = this.state;
     if (prevProps.topic !== topic || prevState.sort_by !== sort_by) {
-      getAllArticles(topic, sort_by)
-        .then(articles =>
-          this.setState({
-            articles: articles,
-            isLoading: false
-          })
-        )
-        .catch(err => {
-          this.setState({ err: false });
-        });
+      getAllArticles(topic, sort_by).then(articles =>
+        this.setState({
+          articles: articles,
+          isLoading: false
+        })
+      );
     }
   }
 

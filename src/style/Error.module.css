@@ -1,0 +1,23 @@
+.error {
+  background-color: #15154e;
+  width: 30%;
+  height: auto;
+  margin: auto;
+  padding: 3em;
+  color: white;
+  margin: 2em auto;
+}
+
+.errorButton {
+  padding: 1em;
+  margin: 1em;
+  font-weight: bold;
+  font-size: 110%;
+  border: solid 4px #8c1f20;
+}
+
+.errorButton:hover {
+  background-color: #15154e;
+  color: white;
+  border-color: white;
+}
