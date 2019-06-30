@@ -2,7 +2,9 @@
 
 ## About
 
-This a single page, responsive, news application built to demonstrate front-end skills in React. The application makes asynchronous API calls to endpoints in a back-end previously built and linked below.
+This is a news aggregation site displaying articles divided by topic. Each article can be rated and commented on by the user; comments can also be rated by voting up or down. The user may remove any comments that they have posted on an article. Articles are sorted by date as default but can also be viewed by most comments, or most votes.
+
+The application makes asynchronous API calls to my own server linked below.
 
 ### NC News-Back-End
 
@@ -12,7 +14,7 @@ Github Link: <https://github.com/KellyUK/nc_news>
 
 ### NC News-Front-End
 
-Hosted on Netlify: <https://kellydavidson-news-project.netlify.com/topics/coding>
+Deployed on Netlify: <https://kellydavidson-news-project.netlify.com/topics/coding>
 
 Github Link: <https://github.com/KellyUK/nc-news-front-end>
 
@@ -41,13 +43,13 @@ In the terminal navigate to the directory where you want to save the application
 
 ### Minimum versions
 
-@reach/router: 1.2.1,
-axios: 0.19.0,
-moment: 2.24.0,
-react: 16.8.6,
-react-dom: 16.8.6,
-react-scripts: 3.0.1,
-react-spinner-material: 1.1.1
+- @reach/router: 1.2.1,
+- axios: 0.19.0,
+- moment: 2.24.0,
+- react: 16.8.6,
+- react-dom: 16.8.6,
+- react-scripts: 3.0.1,
+- react-spinner-material: 1.1.1
 
 ## Acknowledgements
 
