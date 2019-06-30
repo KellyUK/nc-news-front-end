@@ -3,7 +3,6 @@ import { getCommentsByArticleId, deleteCommentById } from "../api";
 import Loading from "./Loading";
 import CommentCard from "./CommentCard";
 import AddComment from "./AddComment";
-import { get } from "http";
 
 class CommentsList extends Component {
   state = { comments: [], isLoading: true };
@@ -31,6 +30,7 @@ class CommentsList extends Component {
       })
     );
   };
+
   render() {
     const { comments } = this.state;
     const { article_id, user } = this.props;

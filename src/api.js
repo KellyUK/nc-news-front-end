@@ -47,6 +47,15 @@ export const patchArticleVotes = (article_id, { inc_votes: voteChange }) => {
     .catch(console.dir);
 };
 
+export const patchCommentVotes = (comment_id, { inc_votes: voteChange }) => {
+  return request
+    .patch(`comments/${comment_id}`, { inc_votes: voteChange })
+    .then(({ data }) => {
+      return data.comment;
+    })
+    .catch(console.dir);
+};
+
 export const postCommentOnArticle = (
   article_id,
   { author: username, body }

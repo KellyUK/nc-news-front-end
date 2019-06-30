@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "@reach/router";
 import styles from "../style/Header.module.css";
 
-const NavBar = ({ updateTopic }) => {
+const NavBar = () => {
   return (
     <nav className={styles.navbar}>
       <Link to="/articles/">

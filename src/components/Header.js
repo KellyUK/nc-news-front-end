@@ -5,13 +5,17 @@ import NavBar from "./NavBar.js";
 
 export const Header = ({ user, handleSortChange }) => {
   return (
-    <div>
-      <div className={styles.logo}>
-        <h1 className={styles.header}>NC News</h1>
+    <>
+      <section className={styles.fixedHeader}>
+        <div className={styles.logo}>
+          <h1 className={styles.header}>NC News</h1>
+        </div>
+        <NavBar />
+      </section>
+      <div>
+        <Login user={user} />
       </div>
-      <NavBar />
-      <Login user={user} />
-    </div>
+    </>
   );
 };
 

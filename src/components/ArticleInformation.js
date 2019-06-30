@@ -9,13 +9,13 @@ export const ArticleInformation = ({
   votes,
   voteChange
 }) => {
+  console.log(votes, voteChange, "in articleinfo");
   return (
     <section className={styles.body}>
       <Vote
         article_id={article_id}
         votes={votes}
         handleVote={handleVote}
-        votes={votes}
         voteChange={voteChange}
       />
       <p>Comments: {article.comment_count}</p>

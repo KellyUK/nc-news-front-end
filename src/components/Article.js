@@ -10,16 +10,19 @@ import Error from "./Error";
 import moment from "moment";
 
 class Article extends Component {
-  state = { article: {}, isLoading: true, err: false, voteChange: 0 };
+  state = {
+    article: {},
+    isLoading: true,
+    err: false,
+    voteChange: 0
+  };
+
   handleVote = voteChange => {
     const { article_id } = this.state.article;
     patchArticleVotes(article_id, { inc_votes: voteChange });
     this.setState(prevState => ({
-      voteChange: prevState.article.votes + voteChange
-      // article: {
-      //   ...prevState.article,
-      //   votes: prevState.article.votes
-      // }
+      votes: prevState.article.votes + voteChange,
+      voteChange: voteChange
     }));
   };
 
@@ -55,16 +58,18 @@ class Article extends Component {
         <User username={username} />
         <p>{formattedDate}</p>
         <ArticleInformation
-          handleVote={this.handleVote}
           article={article}
           article_id={article.article_id}
-          votes={votes + voteChange}
+          handleVote={this.handleVote}
+          votes={votes}
           voteChange={voteChange}
         />
         <CommentsList
           key={article.article_id}
           article_id={article.article_id}
           user={user}
+          handleCommentVote={this.handleCommentVote}
+          voteChange={voteChange}
         />
       </div>
     );
