@@ -1,4 +1,4 @@
-# Northcoders Front-end News Project
+# Northcoders Front-End News Project
 
 ## About
 
