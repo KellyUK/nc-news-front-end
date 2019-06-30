@@ -9,7 +9,6 @@ export const ArticleInformation = ({
   votes,
   voteChange
 }) => {
-  console.log(votes, voteChange, "in articleinfo");
   return (
     <section className={styles.body}>
       <Vote
