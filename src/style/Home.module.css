@@ -1,0 +1,39 @@
+.homePageImages .homeImages {
+  width: 80%;
+  height: auto;
+  margin: auto;
+}
+
+.container {
+  position: relative;
+}
+
+.container button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.popularTitle {
+  background-color: #555;
+  padding: 0.5em;
+  color: white;
+}
+
+@media only screen and (max-width: 400px) {
+  .container button {
+    display: none;
+  }
+  h2 {
+    font-size: 20px;
+  }
+}

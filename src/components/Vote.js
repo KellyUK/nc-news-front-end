@@ -26,21 +26,23 @@ class Vote extends Component {
     const { votes, voteChange } = this.props;
     return (
       <div>
-        <p>Votes: {votes}</p>
-        <button
-          className={styles.button}
-          onClick={this.handleUpClick}
-          disabled={voteChange === 1}
-        >
-          <i className="fas fa-thumbs-up" />
-        </button>
-        <button
-          className={styles.button}
-          onClick={this.handleDownClick}
-          disabled={voteChange === -1}
-        >
-          <i className="fas fa-thumbs-down" />
-        </button>
+        <p className={styles.vote}>Votes: {votes}</p>
+        <div className={styles.voteButtons}>
+          <button
+            className={styles.button}
+            onClick={this.handleUpClick}
+            disabled={voteChange === 1}
+          >
+            <i className="fas fa-thumbs-up" />
+          </button>
+          <button
+            className={styles.button}
+            onClick={this.handleDownClick}
+            disabled={voteChange === -1}
+          >
+            <i className="fas fa-thumbs-down" />
+          </button>
+        </div>
       </div>
     );
   }

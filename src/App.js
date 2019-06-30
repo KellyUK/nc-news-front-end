@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Articles from "./components/Articles";
 import Article from "./components/Article";
 import Error from "./components/Error";
+import Home from "./components/Home";
 
 class App extends Component {
   state = { loggedIn: "", user: "JessJelly" };
@@ -20,6 +21,7 @@ class App extends Component {
       <div className="App">
         <Header user={user} />
         <Router>
+          <Home path="/" />
           <Articles path="/articles/" />
           <Articles path="/topics/:topic" loggedIn={loggedIn} />
           <Article path="articles/:article_id" user={user} />

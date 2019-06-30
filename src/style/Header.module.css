@@ -21,7 +21,7 @@
   padding: 0.5em;
   font-size: 1em;
   font-weight: bold;
-  width: 25%;
+  width: 20%;
   background-color: white;
   color: #15154e;
   border-bottom: solid;
@@ -48,5 +48,8 @@
 @media only screen and (max-width: 400px) {
   .header {
     padding: 0.2em;
+  }
+  .navButton {
+    font-size: 10px;
   }
 }

@@ -1,10 +1,25 @@
 .commentCardBody {
   border: double;
   background-color: white;
-  margin: 2em;
+  margin: 0.5em auto;
   text-align: left;
+  width: 80%;
+}
+
+.commentCardBody .commentInfo {
+  text-align: center;
 }
 
 .deletebutton:disabled {
   display: none;
+}
+
+@media only screen and (max-width: 400px) {
+  .button {
+    font-size: 1.5em;
+    background-color: white;
+  }
+  .button:active {
+    background-color: lightgrey;
+  }
 }

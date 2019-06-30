@@ -14,7 +14,7 @@ export const ArticleCard = ({ article_id, article }) => {
       <User username={username} />
       <Link to={`/articles/${article_id}`}>
         <h2 className={styles.articleTitle}>{article.title}</h2>
-        <h3>Topic: {article.topic}</h3>
+        <h3 className={styles.topic}>Topic: {article.topic}</h3>
 
         <section className={styles.additional}>
           <p>Votes: {article.votes}</p>

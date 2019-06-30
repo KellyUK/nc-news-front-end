@@ -30,8 +30,10 @@ class CommentCard extends Component {
     return (
       <div className={styles.commentCardBody}>
         <p>{comment.body}</p>
-        <p>Author:{comment.author}</p>
-        <p>{formattedDate}</p>
+        <div className={styles.commentInfo}>
+          <p>Author:{comment.author}</p>
+          <p>{formattedDate}</p>
+        </div>
         <button
           className={styles.deletebutton}
           onClick={deleteComment}
