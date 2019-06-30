@@ -2,21 +2,21 @@
 
 ## About
 
-This a single page, responsive, news application built to demonstrate front-end skills in React. The application makes asynchronous API calls to enpoints in a back-end previously built and linked below.
+This a single page, responsive, news application built to demonstrate front-end skills in React. The application makes asynchronous API calls to endpoints in a back-end previously built and linked below.
 
-## NC News-Back-End
+### NC News-Back-End
 
 hosted on Heroku: <https://kelly-davidson-nc-news.herokuapp.com/api/>
 
 Github Link: <https://github.com/KellyUK/nc_news>
 
-## NC News-Front-End
+### NC News-Front-End
 
 Hosted on Netlify: <https://kellydavidson-news-project.netlify.com/topics/coding>
 
 Github Link: <https://github.com/KellyUK/nc-news-front-end>
 
-## Built with
+### Built with
 
 - [React](https://reactjs.org/)
 - [CSS Modules](https://github.com/css-modules/css-modules)
@@ -25,9 +25,9 @@ Github Link: <https://github.com/KellyUK/nc-news-front-end>
 - [Moment.js](https://momentjs.com/)
 - [ReactjsSpinner](https://reactjsexample.com/a-flashy-material-design-inspired-spinner-using-purely-css/)
 
-### Author: Kelly Davidson
+#### Author: Kelly Davidson
 
-## Getting started
+### Getting started
 
 In the terminal navigate to the directory where you want to save the application. The follow the following steps:
 
