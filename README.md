@@ -18,12 +18,12 @@ Github Link: <https://github.com/KellyUK/nc-news-front-end>
 
 ## Built with
 
-- [React]:[https://reactjs.org/]
-- [CSS Modules]:(https://github.com/css-modules/css-modules)
-- [Reach Router]:(https://reach.tech/router)
-- [Font Awesome]:(https://fontawesome.com/start)
-- [Moment.js]:(https://momentjs.com/)
-- [ReactjsSpinner]:(https://reactjsexample.com/a-flashy-material-design-inspired-spinner-using-purely-css/)
+- [React](https://reactjs.org/)
+- [CSS Modules](https://github.com/css-modules/css-modules)
+- [Reach Router](https://reach.tech/router)
+- [Font Awesome](https://fontawesome.com/start)
+- [Moment.js](https://momentjs.com/)
+- [ReactjsSpinner](https://reactjsexample.com/a-flashy-material-design-inspired-spinner-using-purely-css/)
 
 ### Author: Kelly Davidson
 
