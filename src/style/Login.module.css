@@ -2,8 +2,10 @@
   color: #15154e;
   font-weight: bold;
   padding-left: 3px;
+  text-align: left;
 }
 
 .logged {
   color: #5f5959;
+  text-align: right;
 }
