@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import { getArticleById } from "../api";
+import { getArticleById, patchArticleVotes } from "../api";
 import ArticleInformation from "./ArticleInformation";
 import styles from "../style/Article.module.css";
 import Loading from "./Loading";
 import User from "./User";
 import CommentsList from "./CommentsList";
-import { patchArticleVotes } from "../api";
 import Error from "./Error";
 import moment from "moment";
 
@@ -47,26 +46,27 @@ class Article extends Component {
     const username = article.author;
     const rawDate = article.created_at;
     const formattedDate = moment(rawDate).format("MMM Do YYYY");
+    const { title, body, article_id } = article;
     return err ? (
       <Error err={err.response.data.message} />
     ) : isLoading ? (
       <Loading isLoading={this.isLoading} />
     ) : (
       <div className={styles.article}>
-        <h2 className={styles.articleTitle}>{article.title}</h2>
-        <p className={styles.body}>{article.body}</p>
+        <h2 className={styles.articleTitle}>{title}</h2>
+        <p className={styles.body}>{body}</p>
         <User username={username} />
         <p>{formattedDate}</p>
         <ArticleInformation
           article={article}
-          article_id={article.article_id}
+          article_id={article_id}
           handleVote={this.handleVote}
           votes={votes}
           voteChange={voteChange}
         />
         <CommentsList
-          key={article.article_id}
-          article_id={article.article_id}
+          key={article_id}
+          article_id={article_id}
           user={user}
           handleCommentVote={this.handleCommentVote}
           voteChange={voteChange}
