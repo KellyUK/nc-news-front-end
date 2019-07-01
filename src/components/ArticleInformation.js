@@ -9,6 +9,7 @@ export const ArticleInformation = ({
   votes,
   voteChange
 }) => {
+  const { comment_count } = article;
   return (
     <section className={styles.body}>
       <Vote
@@ -17,7 +18,7 @@ export const ArticleInformation = ({
         handleVote={handleVote}
         voteChange={voteChange}
       />
-      <p>Comments: {article.comment_count}</p>
+      <p>Comments: {comment_count}</p>
     </section>
   );
 };

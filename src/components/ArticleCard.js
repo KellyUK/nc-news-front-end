@@ -15,7 +15,6 @@ export const ArticleCard = ({ article_id, article }) => {
       <Link to={`/articles/${article_id}`}>
         <h2 className={styles.articleTitle}>{title}</h2>
         <h3 className={styles.topic}>Topic: {topic}</h3>
-
         <section className={styles.additional}>
           <p>Votes: {votes}</p>
           <p>Comments: {comment_count}</p>
