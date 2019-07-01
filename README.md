@@ -26,6 +26,7 @@ Github Link: <https://github.com/KellyUK/nc-news-front-end>
 - [Font Awesome](https://fontawesome.com/start)
 - [Moment.js](https://momentjs.com/)
 - [ReactjsSpinner](https://reactjsexample.com/a-flashy-material-design-inspired-spinner-using-purely-css/)
+- [Google Fonts](https://fonts.google.com/)
 
 #### Author: Kelly Davidson
 
