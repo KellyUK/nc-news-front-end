@@ -3,12 +3,7 @@ import { getAllArticles } from "../api";
 import ArticleCard from "./ArticleCard";
 import Loading from "./Loading";
 import Error from "./Error";
-import coding from "../images/coding.jpeg";
-import cooking from "../images/cooking.jpeg";
-import football from "../images/football.jpeg";
-import article from "../images/article.jpeg";
-import styles from "../style/Home.module.css";
-import { Link } from "@reach/router";
+import HomePageImages from "./HomePageImages";
 
 class Home extends Component {
   state = {
@@ -67,41 +62,13 @@ class Home extends Component {
 
   render() {
     const { articles, isLoading, err } = this.state;
-
     return err ? (
       <Error err={err.response.data.message} />
     ) : isLoading ? (
       <Loading isLoading={this.isLoading} />
     ) : (
       <div>
-        <section className={styles.homePageImages}>
-          <div className={styles.container}>
-            <img className={styles.homeImages} src={coding} alt="coding" />
-            <Link to="/topics/coding">
-              <button>View Coding Articles</button>
-            </Link>
-          </div>
-          <div className={styles.container}>
-            <img className={styles.homeImages} src={cooking} alt="cooking" />
-            <Link to="/topics/cooking">
-              <button>View Cooking Articles</button>
-            </Link>
-          </div>
-          <div className={styles.container}>
-            <img className={styles.homeImages} src={football} alt="football" />
-            <Link to="/topics/football">
-              <button>View Football Articles</button>
-            </Link>
-          </div>
-          <div className={styles.container}>
-            <img className={styles.homeImages} src={article} alt="football" />
-            <Link to="/topics/article">
-              <button>View All Articles</button>
-            </Link>
-            <h3 className={styles.popularTitle}>Popular Articles</h3>
-          </div>
-        </section>
-
+        <HomePageImages />
         {articles.map(article => (
           <ArticleCard
             key={article.article_id}
