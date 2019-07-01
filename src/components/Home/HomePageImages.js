@@ -1,9 +1,9 @@
 import React from "react";
-import coding from "../images/coding.jpeg";
-import cooking from "../images/cooking.jpeg";
-import football from "../images/football.jpeg";
-import article from "../images/article.jpeg";
-import styles from "../style/Home.module.css";
+import coding from "../../images/coding.jpeg";
+import cooking from "../../images/cooking.jpeg";
+import football from "../../images/football.jpeg";
+import article from "../../images/article.jpeg";
+import styles from "../../style/Home.module.css";
 import { Link } from "@reach/router";
 
 const HomePageImages = () => {

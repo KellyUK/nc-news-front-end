@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
-import styles from "../style/Header.module.css";
+import styles from "../../style/Header.module.css";
 
 const NavBar = () => {
   return (

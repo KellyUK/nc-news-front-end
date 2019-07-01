@@ -1,8 +1,8 @@
-import styles from "../style/CommentCard.module.css";
+import styles from "../../style/CommentCard.module.css";
 import moment from "moment";
-import Vote from "./Vote";
+import Vote from "../Vote";
 import React, { Component } from "react";
-import { patchCommentVotes } from "../api";
+import { patchCommentVotes } from "../../api";
 
 class CommentCard extends Component {
   state = { votes: 0, voteChange: 0 };

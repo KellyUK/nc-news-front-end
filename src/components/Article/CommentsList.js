@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getCommentsByArticleId, deleteCommentById } from "../api";
+import { getCommentsByArticleId, deleteCommentById } from "../../api";
 import CommentCard from "./CommentCard";
 import AddComment from "./AddComment";
 

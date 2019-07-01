@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { getAllArticles } from "../api";
+import { getAllArticles } from "../../api";
 import ArticleCard from "./ArticleCard";
-import Loading from "./Loading";
+import Loading from "../Loading";
 import SortArticles from "./SortArticles";
-import Error from "./Error";
+import Error from "../Error";
 
 class Articles extends Component {
   state = {

@@ -1,8 +1,8 @@
 import * as React from "react";
 import moment from "moment";
-import styles from "../style/ArticleCard.module.css";
+import styles from "../../style/ArticleCard.module.css";
 import { Link } from "@reach/router";
-import User from "./User";
+import User from "../User";
 
 export const ArticleCard = ({ article_id, article }) => {
   const rawDate = article.created_at;

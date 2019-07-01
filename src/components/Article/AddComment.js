@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { postCommentOnArticle } from "../api";
-import styles from "../style/AddComment.module.css";
+import { postCommentOnArticle } from "../../api";
+import styles from "../../style/AddComment.module.css";
 
 class AddComment extends Component {
   state = { body: "" };

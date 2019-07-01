@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { getArticleById, patchArticleVotes } from "../api";
+import { getArticleById, patchArticleVotes } from "../../api";
 import ArticleInformation from "./ArticleInformation";
-import styles from "../style/Article.module.css";
-import Loading from "./Loading";
-import User from "./User";
+import styles from "../../style/Article.module.css";
+import Loading from "../Loading";
+import User from "../User";
 import CommentsList from "./CommentsList";
-import Error from "./Error";
+import Error from "../Error";
 import moment from "moment";
 
 class Article extends Component {

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Router } from "@reach/router";
 import "./App.css";
-import Header from "./components/Header";
-import Articles from "./components/Articles";
-import Article from "./components/Article";
+import Header from "./components/Header/Header";
+import Articles from "./components/Articles/Articles";
+import Article from "./components/Article/Article";
 import Error from "./components/Error";
-import Home from "./components/Home";
+import Home from "./components/Home/Home";
 
 class App extends Component {
   state = { loggedIn: "", user: "JessJelly" };

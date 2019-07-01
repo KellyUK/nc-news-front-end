@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { getAllArticles } from "../api";
-import ArticleCard from "./ArticleCard";
-import Loading from "./Loading";
-import Error from "./Error";
+import { getAllArticles } from "../../api";
+import ArticleCard from "../Articles/ArticleCard";
+import Loading from "../Loading";
+import Error from "../Error";
 import HomePageImages from "./HomePageImages";
 
 class Home extends Component {

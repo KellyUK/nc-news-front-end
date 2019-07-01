@@ -1,6 +1,6 @@
 import React from "react";
-import Vote from "./Vote.js";
-import styles from "../style/ArticleInformation.module.css";
+import Vote from "../Vote.js";
+import styles from "../../style/ArticleInformation.module.css";
 
 export const ArticleInformation = ({
   article,
