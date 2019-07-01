@@ -8,3 +8,10 @@
   background-color: rgb(186, 186, 186);
   border-color: 5px solid #15154e;
 }
+
+@media only screen and (max-width: 400px) {
+  .button {
+    font-size: 11px;
+    padding: 5px;
+  }
+}
