@@ -34,13 +34,21 @@ Github Link: <https://github.com/KellyUK/nc-news-front-end>
 
 In the terminal navigate to the directory where you want to save the application. The follow the following steps:
 
-- clone repo: `git clone <https://github.com/KellyUK/nc-news-front-end>`
+- clone repo
 
-- navigate to cloned repo: `cd nc-news-front-end`
+`git clone <https://github.com/KellyUK/nc-news-front-end>`
 
-- install dependencies: `npm i`
+- navigate to cloned repo
 
-- start react in browser: `npm start`
+`cd nc-news-front-end`
+
+- install dependencies
+
+`npm i`
+
+- start react in browser
+
+`npm start`
 
 ### Minimum versions
 
