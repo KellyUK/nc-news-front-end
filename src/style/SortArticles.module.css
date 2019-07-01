@@ -2,11 +2,14 @@
   padding: 1em;
   color: #15154e;
   font-weight: bold;
+  border-bottom: solid;
+  border-bottom-color: grey;
 }
 
 .button:hover {
-  background-color: rgb(186, 186, 186);
+  background-color: lightgray;
   border-color: 5px solid #15154e;
+  border-bottom-color: #15154e;
 }
 
 @media only screen and (max-width: 400px) {

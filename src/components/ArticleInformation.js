@@ -18,7 +18,7 @@ export const ArticleInformation = ({
         handleVote={handleVote}
         voteChange={voteChange}
       />
-      <p>Comments: {comment_count}</p>
+      <p className={styles.commentCount}>Comments: {comment_count}</p>
     </section>
   );
 };

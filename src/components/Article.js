@@ -56,7 +56,7 @@ class Article extends Component {
         <h2 className={styles.articleTitle}>{title}</h2>
         <p className={styles.body}>{body}</p>
         <User username={username} />
-        <p>{formattedDate}</p>
+        <p className={styles.date}>{formattedDate}</p>
         <ArticleInformation
           article={article}
           article_id={article_id}

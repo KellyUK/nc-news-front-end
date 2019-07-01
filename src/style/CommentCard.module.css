@@ -10,6 +10,15 @@
   text-align: center;
 }
 
+.deletebutton {
+  color: #15154e;
+  font-weight: bold;
+}
+
+.deletebutton:hover {
+  background-color: lightgray;
+}
+
 .deletebutton:disabled {
   display: none;
 }
@@ -21,5 +30,8 @@
   }
   .button:active {
     background-color: lightgrey;
+  }
+  .deletebutton {
+    font-size: 12px;
   }
 }

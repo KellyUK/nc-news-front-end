@@ -1,6 +1,7 @@
 .article {
   border: solid;
-  margin: 1em auto;
+  margin-top: 0px;
+  margin: auto;
   padding: 1em;
   border-color: darkgrey;
   border-style: double;
@@ -11,7 +12,7 @@
 .articleTitle,
 a {
   text-decoration: none;
-  color: black;
+  color: #8c1212;
 }
 
 .article:hover {
@@ -23,6 +24,9 @@ a {
   text-align: left;
 }
 
+.date {
+  color: grey;
+}
 @media only screen and (max-width: 400px) {
   .body {
     font-size: 15px;
