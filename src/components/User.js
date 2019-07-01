@@ -17,13 +17,14 @@ class User extends Component {
   }
   render() {
     const { user, isLoading } = this.state;
-    const avatar = user.avatar_url;
+    const { name, avatar_url } = user;
+
     return isLoading ? (
       <Loading isLoading={this.isLoading} />
     ) : (
       <div>
-        <img className={styles.pic} src={avatar} alt="user avatar" />
-        <p>Written by: {user.name}</p>
+        <img className={styles.pic} src={avatar_url} alt="user avatar" />
+        <p>Written by: {name}</p>
       </div>
     );
   }
