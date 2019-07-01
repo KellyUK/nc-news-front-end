@@ -8,7 +8,7 @@ The application makes asynchronous API calls to my own server linked below.
 
 ### NC News-Back-End
 
-hosted on Heroku: <https://kelly-davidson-nc-news.herokuapp.com/api/>
+Hosted on Heroku: <https://kelly-davidson-nc-news.herokuapp.com/api/>
 
 Github Link: <https://github.com/KellyUK/nc_news>
 
@@ -34,19 +34,19 @@ Github Link: <https://github.com/KellyUK/nc-news-front-end>
 
 In the terminal navigate to the directory where you want to save the application. The follow the following steps:
 
-- clone repo
+#### clone repo
 
 `git clone <https://github.com/KellyUK/nc-news-front-end>`
 
-- navigate to cloned repo
+#### navigate to cloned repo
 
 `cd nc-news-front-end`
 
-- install dependencies
+#### install dependencies
 
 `npm i`
 
-- start react in browser
+#### start react in browser
 
 `npm start`
 

@@ -9,11 +9,11 @@ class CommentCard extends Component {
 
   componentDidMount() {
     const { comment } = this.props;
-    this.setState({ votes: comment.votes, comment_id: comment.comment_id });
+    this.setState({ votes: comment.votes });
   }
 
   handleCommentVote = voteChange => {
-    const { comment_id } = this.state;
+    const { comment_id } = this.props.comment;
     patchCommentVotes(comment_id, { inc_votes: voteChange });
     this.setState(prevState => ({
       votes: prevState.votes + voteChange,
