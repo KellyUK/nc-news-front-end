@@ -14,7 +14,7 @@ Github Link: <https://github.com/KellyUK/nc_news>
 
 ### NC News-Front-End
 
-Deployed on Netlify: <https://kellydavidson-news-project.netlify.com/topics/coding>
+Deployed on Netlify: <https://kellydavidson-news-project.netlify.com/>
 
 Github Link: <https://github.com/KellyUK/nc-news-front-end>
 
