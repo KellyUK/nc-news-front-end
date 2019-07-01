@@ -3,7 +3,7 @@ import styles from "../style/Header.module.css";
 import Login from "./Login";
 import NavBar from "./NavBar.js";
 
-export const Header = ({ user, handleSortChange }) => {
+export const Header = ({ user }) => {
   return (
     <>
       <section className={styles.fixedHeader}>
