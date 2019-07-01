@@ -22,7 +22,6 @@ class Articles extends Component {
 
   fetchArticles = () => {
     const { topic } = this.props;
-
     getAllArticles(topic).then(articles =>
       this.setState({
         articles: articles,
@@ -60,7 +59,6 @@ class Articles extends Component {
 
   render() {
     const { articles, isLoading, err } = this.state;
-
     return err ? (
       <Error err={err.response.data.message} />
     ) : isLoading ? (
