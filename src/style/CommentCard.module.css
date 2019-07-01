@@ -6,8 +6,10 @@
   width: 80%;
 }
 
-.commentCardBody .commentInfo {
+.commentInfo p {
   text-align: center;
+  padding-top: 0px;
+  color: grey;
 }
 
 .deletebutton {

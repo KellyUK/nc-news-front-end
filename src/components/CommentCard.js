@@ -31,7 +31,7 @@ class CommentCard extends Component {
       <div className={styles.commentCardBody}>
         <p>{comment.body}</p>
         <div className={styles.commentInfo}>
-          <p>Author:{comment.author}</p>
+          <p>User: {comment.author}</p>
           <p>{formattedDate}</p>
 
           <button
