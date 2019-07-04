@@ -33,15 +33,16 @@ class CommentCard extends Component {
         <div className={styles.commentInfo}>
           <p>User: {comment.author}</p>
           <p>{formattedDate}</p>
-
-          <button
-            className={styles.deletebutton}
-            onClick={deleteComment}
-            disabled={comment.author !== user}
-            value={comment_id}
-          >
-            Delete
-          </button>
+          <section className={styles.deleteSection}>
+            <button
+              className={styles.deletebutton}
+              onClick={deleteComment}
+              disabled={comment.author !== user}
+              value={comment_id}
+            >
+              Delete
+            </button>
+          </section>
         </div>
         <Vote
           votes={votes}
