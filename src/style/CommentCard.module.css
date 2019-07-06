@@ -38,7 +38,4 @@
   .button:active {
     background-color: lightgrey;
   }
-  .deletebutton {
-    font-size: 12px;
-  }
 }
