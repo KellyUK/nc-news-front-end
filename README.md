@@ -4,19 +4,19 @@
 
 This is a news aggregation site displaying articles divided by topic. Each article can be rated and commented on by the user; comments can also be rated by voting up or down. The user may remove any comments that they have posted on an article. Articles are sorted by date as default but can also be viewed by most comments, or most votes.
 
-The application makes asynchronous API calls to my own server linked below.
-
-### NC News-Back-End
-
-Hosted on Heroku: <https://kelly-davidson-nc-news.herokuapp.com/api/>
-
-Github Link: <https://github.com/KellyUK/nc_news>
+The application makes API calls to my own server linked below.
 
 ### NC News-Front-End
 
 Deployed on Netlify: <https://kellydavidson-news-project.netlify.com/>
 
 Github Link: <https://github.com/KellyUK/nc-news-front-end>
+
+### NC News-Back-End
+
+Hosted on Heroku: <https://kelly-davidson-nc-news.herokuapp.com/api/>
+
+Github Link: <https://github.com/KellyUK/nc_news>
 
 ### Built with
 
