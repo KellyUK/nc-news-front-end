@@ -28,8 +28,8 @@ const HomePageImages = () => {
         </Link>
       </div>
       <div className={styles.container}>
-        <img className={styles.homeImages} src={article} alt="football" />
-        <Link to="/topics/article">
+        <img className={styles.homeImages} src={article} alt="articles" />
+        <Link to="/articles">
           <button>View All Articles</button>
         </Link>
         <h3 className={styles.popularTitle}>Popular Articles</h3>
