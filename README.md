@@ -6,17 +6,19 @@ This is a news aggregation site displaying articles divided by topic. Each artic
 
 The application makes asynchronous API calls to my own server linked below.
 
+### NC News-Front-End
+
+Deployed on Netlify: <https://kellydavidson-news-project.netlify.com/>
+
+Github Link: <https://github.com/KellyUK/nc-news-front-end>
+
+
 ### NC News-Back-End
 
 Hosted on Heroku: <https://kelly-davidson-nc-news.herokuapp.com/api/>
 
 Github Link: <https://github.com/KellyUK/nc_news>
 
-### NC News-Front-End
-
-Deployed on Netlify: <https://kellydavidson-news-project.netlify.com/>
-
-Github Link: <https://github.com/KellyUK/nc-news-front-end>
 
 ### Built with
 
