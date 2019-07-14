@@ -18,12 +18,6 @@ Hosted on Heroku: <https://kelly-davidson-nc-news.herokuapp.com/api/>
 
 Github Link: <https://github.com/KellyUK/nc_news>
 
-### NC News-Back-End
-
-Hosted on Heroku: <https://kelly-davidson-nc-news.herokuapp.com/api/>
-
-Github Link: <https://github.com/KellyUK/nc_news>
-
 ### Built with
 
 - [React](https://reactjs.org/)
